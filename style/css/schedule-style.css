@@ -1,0 +1,10 @@
+.label { 
+	TEXT-ALIGN: left; 
+	FLOAT: left; 
+	FONT-SIZE: 12px; 
+	MARGIN-RIGHT: 10px }
+legend { PADDING-BOTTOM: 5px; MARGIN: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT-SIZE: 15px; FONT-WEIGHT: bolder; PADDING-TOP: 5px }
+table { margin: 40px auto }
+.main{
+	margin-top: 60px !important;
+}
