@@ -1,24 +1,25 @@
 <?php
 include('../includes/connection.php');
 $message = '';
-/*if(isset($_GET['MAKICHHOAT']))
+if(isset($_GET['activation_code']))
 {
-	$query = "
+
+	$MAKICHHOAT = $_GET['activation_code'];
+
+
+	$sql = "
 		SELECT * FROM taikhoan
 		WHERE MAKICHHOAT = '$MAKICHHOAT'
 	";
-	$statement = mysqli_query($conn, $query);
 	
-	$MAKICHHOAT => $_GET['MAKICHHOAT'];
-	$no_of_row = mysqli_num_rows($query);
-	
-	
+	$query = mysqli_query($conn,$sql);
+
+    $no_of_row = mysqli_num_rows($query);
+
 	if($no_of_row > 0)
 	{
-		$result = mysqli_fetch_array($query);
+		$row = mysqli_fetch_array($query);
 		
-		foreach($result as $row)
-		{
 			if($row['TRANGTHAI'] == 'CHUAXACMINH')
 			{
 				$update_query = "
@@ -26,28 +27,28 @@ $message = '';
 				SET TRANGTHAI = 'DAXACMINH'
 				WHERE ID = '".$row['ID']."'
 				";
-				$statement = mysqli_query($conn, $update_query);
+
+				$statement = mysqli_query($conn,$update_query);
+
+
+					$message = "<script>alert('Địa chỉ Email của bạn được xác minh thành công!');</script>";
+
 				
-				execute();
-				$sub_result = mysqli_fetch_array($query);
-				
-				if(isset($sub_result))
-				{
-					$message = '<label class="text-success">Your Email Address Successfully Verified <br />You can login here - <a href="admin.php">Admin</a></label>';
-				}
 			}
 			else
 			{
-				$message = '<label class="text-info">Your Email Address Already Verified</label>';
+				$message = "<script>alert('Địa chỉ Email của bạn đã được xác minh');</script>";
+
+
 			}
-		}
+		
 	}
 	else
 	{
-		$message = '<label class="text-danger">Invalid Link</label>';
+		$message = "<script>alert('Liên kết không lợp lệ');</script>";
 	}
-}*/
-if(isset($_GET['activation_code']))
+}
+/*if(isset($_GET['activation_code']))
 {
 	$query = "
 		SELECT * FROM taikhoan
@@ -92,7 +93,7 @@ if(isset($_GET['activation_code']))
 	{
 		$message = '<label class="text-danger">Invalid Link</label>';
 	}
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>

@@ -6,8 +6,9 @@
 	$query = mysqli_query($conn,$sql);
 ?>
 
+<!--
 <?php
-	if (isset($_GET["id_delete"])) {
+/*	if (isset($_GET["id_delete"])) {
 		
 
 		$sql = 'DELETE FROM kehoachgiangday WHERE MAKHGD LIKE "' . $_GET["id_delete"] .'"';
@@ -16,9 +17,9 @@
 		
 		
 	}
-	
+*/	
 ?>
-
+-->
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -39,7 +40,7 @@
 			      <th scope="col">Địa điểm</th>
 			      <th scope="col">Thời gian</th>
 			      <th scope="col">Nội dung</th>
-			      <th scope="col">Xóa</th>
+			      <!-- <th scope="col">Xóa</th>-->
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -58,7 +59,7 @@
 			      <td><?php echo $data['THOIGIAN']; ?></td>
 			      <td><?php echo $data['NOIDUNG']; ?></td>
 			      
-			      <td><a href="info_teachingplan.php?id_delete=<?php echo $MAKHGD;?>">Xóa</a></td>
+			      <!--<td><a href="info_teachingplan.php?id_delete=<?php //echo $MAKHGD;?>">Xóa</a></td>-->
 
 			    </tr>
 			    <?php } ?>

@@ -3,7 +3,7 @@
 
 include('../includes/connection.php');
 
-if(isset($_SESSION['ID']))
+/*if(isset($_SESSION['ID']))
 {
 	header("location:index.php");
 }
@@ -123,6 +123,130 @@ if(isset($_POST["register"]))
 		}
 	}
 }
+*/
+
+
+if(isset($_SESSION['ID']))
+{
+	header("location:index.php");
+}
+
+$message = '';
+
+if(isset($_POST["register"]))
+{
+
+
+	$ID = $_POST['id'];
+	$TENTAIKHOAN = $_POST['user_name'];
+	$EMAIL = $_POST['user_email'];
+
+	$SQL = "SELECT * FROM taikhoan WHERE ID = '$ID' OR TENTAIKHOAN = '$TENTAIKHOAN' OR EMAIL = '$EMAIL'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
+		
+		
+		
+
+	if($NUM > 0)
+    {
+        echo "<script>alert('Đã tồn tại ID hoặc tên tài khoản hoặc email !'); window.location='register.php'</script>";
+         exit;
+        
+    } 
+    else
+    {
+       $EMAIL = $_POST['user_email'];
+
+	$sql = "SELECT * FROM taikhoan WHERE EMAIL = '$EMAIL'";
+
+	$query = mysqli_query($conn,$sql);
+
+    $num = mysqli_num_rows($query);
+
+
+	if($num > 0)
+	{
+		$message = "<script>alert('Email đã thoát');</script>";
+	}
+
+
+	else
+	{
+		$MATKHAUSO = rand(100000,999999);
+		$MATKHAUMAHOA = md5($MATKHAUSO);
+		$MAKICHHOAT = md5(rand());
+		
+        
+        $ID = $_POST['id'];
+		$TENTAIKHOAN = $_POST['user_name'];
+		$MATKHAU = $MATKHAUMAHOA;
+		$EMAIL = $_POST['user_email'];
+		$MAKICHHOAT = $MAKICHHOAT;
+		$QUYEN = $_POST['user_level'];
+		$TRANGTHAI = 'CHUAXACMINH';
+
+		$insert_query = "
+		INSERT INTO taikhoan 
+		(ID, TENTAIKHOAN, MATKHAU, EMAIL, MAKICHHOAT, QUYEN, TRANGTHAI) 
+		VALUES ('$ID', '$TENTAIKHOAN', '$MATKHAU', '$EMAIL', '$MAKICHHOAT', '$QUYEN', '$TRANGTHAI')
+		";
+
+
+		$query = mysqli_query($conn, $insert_query);
+
+
+        if($_POST['user_level'] =="2")
+        {
+
+        	$MAQUANLY =	$_POST['id'];
+			$TEN = $_POST['name'];
+			$DIACHI = $_POST['address'];
+			$SDT = $_POST['phone'];
+				
+            $insert_query1 = "INSERT INTO quanly(MAQUANLY, TEN, DIACHI, SDT) VALUES ('$MAQUANLY', '$TEN', '$DIACHI', '$SDT')";
+
+            $query = mysqli_query($conn, $insert_query1);
+		}
+
+
+        else if($_POST['user_level'] =="3")
+        {
+
+        	$MAGIANGVIEN =	$_POST['id'];
+			$TEN = $_POST['name'];
+			$DIACHI = $_POST['address'];
+			$SDT = $_POST['phone'];
+				
+            $insert_query2 = "INSERT INTO giangvien(MAGIANGVIEN, TEN, DIACHI, SDT) VALUES ('$MAGIANGVIEN', '$TEN', '$DIACHI', '$SDT')";
+
+            $query = mysqli_query($conn, $insert_query2);
+		}
+
+
+        $base_url = "http://localhost/175A071344_175A070275/";  //change this baseurl value as per your file path
+			$mail_body = "
+			<p>Chào ".$_POST['user_name'].",</p>
+			<p>Cảm ơn! Mật khẩu của bạn là ".$MATKHAUSO.". Mật khẩu này sẽ chỉ hoạt động sau khi xác minh email của bạn.</p>
+			<p>Vui lòng mở liên kết này để xác minh địa chỉ email của bạn - ".$base_url."admin/email_verification.php?activation_code=".$MAKICHHOAT."
+			<p>Thân,<br />VietCao</p>
+			";
+
+        include('../sendmail.php');
+
+
+	}
+	    }
+
+
+
+
+
+
+
+    
+}
+
 
 ?>
 

@@ -10,13 +10,31 @@
 		$NAMHOC = $_POST["NAMHOC"];
 		$HOCKI = $_POST["HOCKI"];
 		$GIAIDOAN = $_POST["GIAIDOAN"];
+
+		$SQL = "SELECT * FROM thoigianhoc WHERE MATHOIGIAN = '$MATHOIGIAN'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
+
+
+
+		if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có thời gian học này!'); window.location='create_time.php'</script>";
+	        exit;
+        } 
+        else
+        {
+           $sql = "INSERT INTO thoigianhoc VALUES ('$MATHOIGIAN', '$NAMHOC', '$HOCKI', '$GIAIDOAN')";
+		// thực thi câu $sql với biến conn lấy từ file connection.php
+		    mysqli_query($conn,$sql);
+
+		    $message = "<script>alert('Tạo thời gian học thành công!');</script>";
+	    }
+
 		
  
-		$sql = "INSERT INTO thoigianhoc VALUES ('$MATHOIGIAN', '$NAMHOC', '$HOCKI', '$GIAIDOAN')";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
 
-		$message = '<label class="text-success">Tạo thời gian học thành công</label>';
+
 		
 	}
  

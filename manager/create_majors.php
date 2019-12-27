@@ -10,12 +10,29 @@
 		$TENNGANHHOC = $_POST["TENNGANHHOC"];
 		
  
-		$sql = "INSERT INTO nganhhoc VALUES ('$MANGANHHOC', '$TENNGANHHOC')";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
-
-		$message = '<label class="text-success">Tạo ngành học thành công</label>';
+		$SQL = "SELECT * FROM nganhhoc WHERE MANGANHHOC = '$MANGANHHOC'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
 		
+
+
+		if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có ngành học này!'); window.location='create_majors.php'</script>";
+	        exit;
+        } 
+        else
+        {
+                //Lưu thông tin thành viên vào bảng
+            $sql = "INSERT INTO nganhhoc VALUES ('$MANGANHHOC', '$TENNGANHHOC')";
+			// thực thi câu $sql với biến conn lấy từ file connection.php
+			mysqli_query($conn,$sql);
+
+			$message = "<script>alert('Tạo ngành học thành công!');</script>";
+	    }
+
+
+
 	}
  
 ?>
@@ -57,7 +74,7 @@
 
 		                    <div class="form-group" >
 
-									<input type="submit" name="create_majors"  value="Tạo ngành" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+									<input type="submit" name="create_majors"  value="Tạo ngành" class="btn btn-success"/>
 							</div>
 					    
                          <?php echo $message; ?>                   

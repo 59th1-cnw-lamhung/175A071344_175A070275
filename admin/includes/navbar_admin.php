@@ -81,7 +81,7 @@
 
             }
 
-            else if ($data['QUYEN'] == 1)
+            else if ($data['QUYEN'] == '1')
             {
               echo "<div style='color:GREEN; padding:5px 30px;'>ADMIN</div>";
             }

@@ -1,35 +1,29 @@
-
-
 <?php session_start(); ?>
-
 <?php include "includes/header.php" ?>
-
-<?php 
+<?php
 //Gọi file connection.php ở bài trước
 require_once("includes/connection.php");
 ?>
-	
-
 
 <div class="main-body">
-		<main>
-			<table class="table-main">
-				<tbody>
-					<tr>
-						<td valign="middle" align="center">
-							<div class = "include-table">
-								<div class="login-table">
-									<table class="top-table">
-										<tbody>
-											<tr><td>
-												
-											</td></tr>
-										</tbody>
-									</table>
-									<table class="middle-table">
-										<tr><td valign="middle" align="center">
-											<form action="login.php" method="post">
-												<table class="middle-table-center">
+	<main>
+		<table class="table-main">
+			<tbody>
+				<tr>
+					<td valign="middle" align="center">
+						<div class = "include-table">
+							<div class="login-table">
+								<table class="top-table">
+									<tbody>
+										<tr><td>
+											
+										</td></tr>
+									</tbody>
+								</table>
+								<table class="middle-table">
+									<tr><td valign="middle" align="center">
+										<form action="login.php" method="post">
+											<table class="middle-table-center">
 												<tbody>
 													<tr>
 														<td class="info" align="right" >Tài khoản: &nbsp;</td>
@@ -49,13 +43,13 @@ require_once("includes/connection.php");
 															<input type="submit" name="btn_submit" value="Đăng nhập">
 														</td>
 														
-														<?php 
+														<?php
 														// Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
 															if (isset($_POST["btn_submit"])) {
 																// lấy thông tin người dùng
 																$username = $_POST["username"];
 																$password = $_POST["password"];
-																//làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
+																//làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt
 																//mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
 																$username = strip_tags($username);
 																$username = addslashes($username);
@@ -74,33 +68,32 @@ require_once("includes/connection.php");
 																	}else{
 																		// Lấy ra thông tin người dùng và lưu vào session
 																		/*while ($data = mysqli_fetch_array($query)) {
-																    		$_SESSION["user_id"] = $data["id"];
+																		$_SESSION["user_id"] = $data["id"];
 																			$_SESSION['username'] = $data["username"];
 																			$_SESSION["email"] = $data["email"];
 																			$_SESSION["fullname"] = $data["fullname"];
 																			$_SESSION["is_block"] = $data["is_block"];
 																			$_SESSION["permision"] = $data["permision"];
-																    	}*/
-																		    $_SESSION['ID'] = $data["ID"];
+																	}*/
+																		$_SESSION['ID'] = $data["ID"];
 																			$_SESSION['TENTAIKHOAN'] = $data["TENTAIKHOAN"];
 																			
 																			$_SESSION["QUYEN"] = $data["QUYEN"];
-
-                                                                        if($data["QUYEN"]==3)
-                                                                           header('Location: lecturers/lecturers.php');
-                                                                        else if($data["QUYEN"]==1)
-                                                                           header('Location: admin/admin.php');
-                                                                        else if($data["QUYEN"]==2)
-                                                                           header('Location: manager/manager.php');
-                                                                        else
-                                                                           header('Location: index.php');
-															                // Thực thi hành động sau khi lưu thông tin vào session
-															                // ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
+														if($data["QUYEN"]==3)
+														header('Location: lecturers/lecturers.php');
+														else if($data["QUYEN"]==1)
+														header('Location: admin/admin.php');
+														else if($data["QUYEN"]==2)
+														header('Location: manager/manager.php');
+														else
+														header('Location: index.php');
+															// Thực thi hành động sau khi lưu thông tin vào session
+															// ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
 																		//header('Location: admin/admin.php');
 																	}
 																}
 															}
-															?>
+														?>
 														
 													</tr>
 													<tr>
@@ -110,29 +103,24 @@ require_once("includes/connection.php");
 													</tr>
 												</tbody>
 											</table>
-											</form>
+										</form>
+										
+									</td></tr>
+								</table>
+								<table class="bottom-table">
+									<tbody>
+										<tr><td>
 											
 										</td></tr>
-									</table>
-									<table class="bottom-table">
-										<tbody>
-											<tr><td>
-												
-											</td></tr>
-										</tbody>
-									</table>
-								    </table>
-							    </div>
-						    </div>
-					    </td>
-				    </tr>
-			    </tbody>
-		    </table>
-	    </main>
-    </div>
-
+									</tbody>
+								</table>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</main>
+</div>
 <?php include "includes/footer.php" ?>
-
-
-
-

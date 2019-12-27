@@ -12,9 +12,7 @@
 	if (isset($_GET["id_delete"])) {
 		
 		$sql = 'DELETE FROM nganhhoc WHERE MANGANHHOC LIKE "' . $_GET["id_delete"] . '"';
-
-
-        
+   
 		mysqli_query($conn,$sql);
 		
 		

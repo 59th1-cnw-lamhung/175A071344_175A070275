@@ -12,13 +12,29 @@ $message = '';
 		$DIADIEM = $_POST["DIADIEM"];
 		$THOIGIAN = $_POST["THOIGIAN"];
 		$NOIDUNG = $_POST["NOIDUNG"];
+
+		$SQL = "SELECT * FROM kehoachgiangday WHERE MAKHGD = '$MAKHGD'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
 		
 		
-		$sql = "INSERT INTO kehoachgiangday
-		VALUES('$MAKHGD', '$MAGIANGVIEN', '$MALOPHOCPHAN', '$NGAY', '$THU', '$DIADIEM', '$THOIGIAN', '$NOIDUNG')";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
-		$message = '<label class="text-success">Tạo kế hoạch giảng dạy dự kiến thành công</label> ';
+		
+
+		if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có kế hoạch giảng dạy này!'); window.location='create_teachingplan.php'</script>";
+	         exit;
+	        
+        } 
+        else
+        {
+           $sql = "INSERT INTO kehoachgiangday
+			       VALUES('$MAKHGD', '$MAGIANGVIEN', '$MALOPHOCPHAN', '$NGAY', '$THU', '$DIADIEM', '$THOIGIAN', '$NOIDUNG')";
+			// thực thi câu $sql với biến conn lấy từ file connection.php
+			mysqli_query($conn,$sql);
+			
+			$message = "<script>alert('Tạo kế hoạch giảng dạy dự kiến thành công!');</script>";
+	    }
 		
 	}
 ?>
@@ -45,11 +61,25 @@ $message = '';
 							<label>Mã kế hoach giảng dạy dự kiến</label>
 							<input type="text" name="MAKHGD" class="form-control" required />
 						</div>
+						
+
 						<div class="form-group">
 							<label>Mã giảng viên</label>
-							<input type="number" name="MAGIANGVIEN" class="form-control"
-							value="<?php echo $_SESSION['ID'] ?>" readonly/>
+							<?php
+							$sql = mysqli_query($conn,"select * from giangvien") or die(myqli_error($conn));
+							if (mysqli_num_rows($sql) > 0) {
+							$i=0;
+							?>
+							<select class="form-control" name = "MAGIANGVIEN" required>
+								<option></option>
+								<?php while($row=mysqli_fetch_assoc($sql)) {
+								$i++; ?>
+								<option><?php echo $row['MAGIANGVIEN']; ?></option>
+								<?php }}  ?>
+							</select>
 						</div>
+
+
 						
 						<div class="form-group">
 							<label>Mã lớp học phần</label>
@@ -109,7 +139,7 @@ $message = '';
 						</div>
 						
 						<div class="form-group" >
-							<input type="submit" name="create_teachingplan" value="Tạo kế hoạch" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+							<input type="submit" name="create_teachingplan" value="Tạo kế hoạch" class="btn btn-success"/>
 						</div>
 						
 						<?php echo $message; ?>

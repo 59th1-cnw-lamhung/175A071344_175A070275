@@ -8,12 +8,25 @@ $message = '';
 		$TENMONHOC = $_POST["TENMONHOC"];
 		$SOTINCHI = $_POST["SOTINCHI"];
 		
+		$SQL = "SELECT * FROM lopmonhoc WHERE MALOPMONHOC = '$MALOPMONHOC'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
 		
-
-		$sql = "INSERT INTO lopmonhoc VALUES ('$MALOPMONHOC', '$MAMONHOC', '$TENMONHOC', '$SOTINCHI')";
+		if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có lớp môn học này!'); window.location='subject_class.php'</script>";
+	        exit;
+        } 
+        else
+        {
+           $sql = "INSERT INTO lopmonhoc VALUES ('$MALOPMONHOC', '$MAMONHOC', '$TENMONHOC', '$SOTINCHI')";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
-		$message = '<label class="text-success">Tạo lớp môn học thành công</label>';
+			mysqli_query($conn,$sql);
+
+			$message = "<script>alert('Tạo lớp môn học thành công!');</script>";
+	    }
+
+
 		
 	}
 

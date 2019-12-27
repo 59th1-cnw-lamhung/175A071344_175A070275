@@ -117,6 +117,24 @@
 
 
   <li CLASS="nav-item">
+    <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour1" aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fas fa-puzzle-piece"></i>
+      <span>Quản lý KHGDDK</span>
+    </a>
+    <div id="collapseFour1" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div CLASS="bg-white py-2 collapse-inner rounded">
+        <h6 CLASS="collapse-header">Chức năng</h6>
+        <a CLASS="collapse-item" href="create_teachingplan.php" target="iframe">Tạo KHGDDK</a>
+        <a CLASS="collapse-item" href="info_teachingplan_manager.php" target="iframe">Thông tin KHGDDK</a>
+        
+      </div>
+    </div>
+
+    
+  </li>
+
+
+  <li CLASS="nav-item">
     <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fas fa-puzzle-piece"></i>
       <span>Quản lý cá nhân</span>

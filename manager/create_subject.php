@@ -8,10 +8,28 @@ $message = '';
 		$MANGANHHOC = $_POST["MANGANHHOC"];
 		
 
-		$sql = "INSERT INTO monhoc VALUES ('$MANGANHHOC', '$MAMONHOC', '$TENMONHOC')";
+        $SQL = "SELECT * FROM monhoc WHERE MAMONHOC = '$MAMONHOC'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
+
+        if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có môn học này!'); window.location='create_subject.php'</script>";
+	        exit;
+        } 
+        else
+        {
+            $sql = "INSERT INTO monhoc VALUES ('$MANGANHHOC', '$MAMONHOC', '$TENMONHOC')";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
-		$message = '<label class="text-success">Tạo môn học thành công</label>';
+		    mysqli_query($conn,$sql);
+
+		    $message = "<script>alert('Tạo môn học thành công!');</script>";
+	    }
+
+
+
+
+		
 		
 	}
 
@@ -61,7 +79,7 @@ $message = '';
 						</div>
 						
 						<div class="form-group" >
-							<input type="submit" name="create_subject"  value="Tạo môn" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+							<input type="submit" name="create_subject"  value="Tạo môn" class="btn btn-success" />
 						</div>
 						
 						<?php echo $message; ?>

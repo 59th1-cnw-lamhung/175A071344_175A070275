@@ -14,11 +14,31 @@
 		$TACGIA = $_POST["TACGIA"];
 		
  
-		$sql = "INSERT INTO baiviet VALUES ( '$ID', '$TIEUDE', '$NOIDUNG', '$HINHANH', '$TACGIA', now(), now())";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
+		
 
-		$message = '<label class="text-success">Bài viết đã thêm thành công</label>';
+
+		$SQL = "SELECT * FROM baiviet WHERE ID = '$ID'";
+		$QUERY = mysqli_query($conn,$SQL);
+		$NUM = mysqli_num_rows($QUERY);
+		
+
+
+		if($NUM > 0)
+        {
+	        echo "<script>alert('Đã có ID bài viết này!'); window.location='new_posts.php'</script>";
+	        exit;
+        } 
+        else
+        {
+                //Lưu thông tin thành viên vào bảng
+            $sql = "INSERT INTO baiviet VALUES ( '$ID', '$TIEUDE', '$NOIDUNG', '$HINHANH', '$TACGIA', now(), now())";
+		// thực thi câu $sql với biến conn lấy từ file connection.php
+			mysqli_query($conn,$sql);
+
+			$message = "<script>alert('Đã thêm bài viết thành công!'); window.location='new_posts.php'</script>";
+	    }
+
+
 		
 	}
  

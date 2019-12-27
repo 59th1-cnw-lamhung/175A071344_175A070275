@@ -7,17 +7,10 @@
 ?>
 
 <?php
-	if (isset($_GET["id_delete"])) {
+	if (isset($_GET["id_delete1"])) {
 		
 
-		$sql = 'DELETE FROM lophocphan WHERE MALOPHOCPHAN LIKE "' . $_GET["id_delete"] .'"';
-
-
-		$sql = 'DELETE FROM lophocphan WHERE MALOPHOCPHAN LIKE "' . $_GET["id_delete"] .'"';
-
-		$sql = 'DELETE FROM nganhhoc WHERE MANGANHHOC = "' + $_GET["id_delete"] + '"';
-
-
+		$sql = 'DELETE FROM lophocphan WHERE MALOPHOCPHAN LIKE "' . $_GET["id_delete1"] .'"';
 
 		mysqli_query($conn,$sql);
 		
@@ -60,7 +53,7 @@
 			      <td><?php echo $data['MAGIANGVIEN']; ?></td>
 			      <td><?php echo $data['MATHOIGIAN']; ?></td>
 			      <td><a href="edit_sectionclass.php?id=<?php echo $MALOPHOCPHAN;?>">Sửa</a></td>
-			      <td><a href="info_sectionclass.php?id_delete=<?php echo $MALOPHOCPHAN;?>">Xóa</a></td>
+			      <td><a href="info_sectionclass.php?id_delete1=<?php echo $MALOPHOCPHAN;?>">Xóa</a></td>
 
 			    </tr>
 			    <?php } ?>
