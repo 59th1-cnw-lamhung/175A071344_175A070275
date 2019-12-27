@@ -28,11 +28,11 @@
 					</select>
 				</ul>
 			</nav>
-
+            
             <div class="search">
             	<input type="text" name=""><a href="">Tìm kiếm</a>
             </div>
-
+            
 			<div class="box-user">
 				<div class="info-user">
 					<p>Khách</p>

@@ -1,40 +1,12 @@
 <?php require_once("includes/connection.php");?>
-<!DOCTYPE html>
-<html lang="en"><head>
-    <title>.: ĐẠI HỌC THỦY LỢI :.</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="style/js/bootstrap.js"></script>
-    <script type="text/javascript" src="style/js/1.js"></script>
-    <link rel="stylesheet" href="style/css/bootstrap.css">
-    <link rel="stylesheet" href="style/css/font-awesome.css">
-    <link rel="stylesheet" href="style/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body >
-    
-    
-    <div class="header">
-        <header>
-            <div class="title">
-                <span class="text_left">HỆ THỐNG ĐĂNG KÍ HỌC - ĐẠI HỌC THỦY LỢI </span>
-            </div>
-            
-            <nav class="nav-right">
-                <ul>
-                    <li><a href="index.php">Trang chủ |</a></li>
-                    <li><a href="login.php">Đăng nhập |</a></li>
-                    <li><a href="">Hỏi đáp |</a></li>
-                    <li><a href="">Trợ giúp</a></li>
-                    <select>
-                        <option value="">VN</option>
-                    </select>
-                </ul>
-            </nav>
-        </header>
-    </div>
+
+
+
+<?php session_start(); ?>
+
+<?php include "includes/header.php" ?>
+
+
     <body>
         <main>
             <div class="main">
@@ -98,7 +70,7 @@
                     echo '<td>'.$data['TEN'].'</td>';
                     echo '<td>'.$data['DIACHI'].'</td>';
                     echo '<td>'.$data['SDT'].'</td>';
-                    echo'<td><a href="shedule.php?search='.$data['MAGIANGVIEN'].'">XEM</a></td>';
+                    echo'<td><a href="shedule.php?search='.$data['MAGIANGVIEN'].'">XEM CHI TIẾT</a></td>';
                 echo '</tr>';
             echo '</table>';
             }

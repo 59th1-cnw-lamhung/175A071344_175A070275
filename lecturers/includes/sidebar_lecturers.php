@@ -21,7 +21,7 @@
   <!-- Nav Item - Pages Collapse Menu -->
 
   <li CLASS="nav-item">
-    <a CLASS="nav-link collapsed" href="manager.php" >
+    <a CLASS="nav-link collapsed" href="lecturers.php" >
       <i CLASS="fas fa-home"></i>
       <span>Trang chủ</span>
     </a>

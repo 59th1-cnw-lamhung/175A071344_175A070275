@@ -31,7 +31,7 @@
 	        <table class="table">
 			  <thead class="thead-light">
 			    <tr>
-			      <th scope="col">Mã kế hoạch giảng dạy</th>
+			      <th scope="col">Mã KHGDDK</th>
 			      <th scope="col">Mã giảng viên</th>
 			      <th scope="col">Mã lớp học phần</th>
 			      <th scope="col">Ngày</th>

@@ -4,7 +4,7 @@
     			<div class="menu1-navbar">
     				<ul class="sidebar-menu">
     					<li class="header-home"><a href="">DANH MỤC CHÍNH</a></li>
-    					<li><a href="">Tra cứu lịch giảng dạy</a></li>
+    					<li><a href="search.php">Tra cứu lịch giảng dạy</a></li>
     					<li><a href="">Chương trình đào tạo</a></li>
     					<li><a href="">Giảng đường trực tuyến</a></li>
     				</ul>

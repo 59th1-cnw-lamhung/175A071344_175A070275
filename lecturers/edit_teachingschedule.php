@@ -11,7 +11,7 @@
 	<body>
 
 <?php
-	if (isset($_POST["edit_teachingshecdule"])) {//name chỗ nút cập nhâtj
+	if (isset($_POST["edit_teachingschedule"])) {//name chỗ nút cập nhâtj
 		//lấy thông tin từ các form bằng phương thức POST
 		$MAKHGD = $_POST["MAKHGD"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
@@ -25,11 +25,15 @@
 		// Viết câu lệnh cập nhật thông tin người dùng
 		
 		// thực thi câu $sql với biến conn lấy từ file connection.php
+         
 
-		$sql = "INSERT INTO lichtrinhthucte VALUES ('$MAKHGD', '$MAGIANGVIEN', '$MALOPHOCPHAN', '$NGAY', '$THU', '$DIADIEM', '$THOIGIAN', '$NOIDUNG')";
+
+
+	$sql = "INSERT INTO lichtrinhthucte(MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG)
+	VALUES ('$MAKHGD', '$MAGIANGVIEN', '$MALOPHOCPHAN', '$NGAY', '$THU', '$DIADIEM', '$THOIGIAN', '$NOIDUNG')";
 		mysqli_query($conn,$sql);
 
-		header('Location: lec.php');
+		header('Location: lecturers.php');
        
 	}
  
@@ -57,7 +61,7 @@
 		              while ( $data = mysqli_fetch_array($query) ) {
 		              	
 	                ?>
-					<form action="edit_teachingshecdule.php" method="POST">
+					<form action="edit_teachingschedule.php" method="POST">
 						
 
 
@@ -80,7 +84,7 @@
 								if (mysqli_num_rows($sql) > 0) {
 								$i=0;
 								?>
-								<select class="form-control" name = "MALOPHOCPHAN" required>
+								<select class="form-control" name = "MALOPHOCPHAN" value="<?php echo $data['MALOPHOCPHAN']; ?>" required>
 									<option><?php echo $data['MALOPHOCPHAN']; ?></option>
 									<?php while($row=mysqli_fetch_assoc($sql)) {
 									$i++; ?>
@@ -100,7 +104,7 @@
 							
 							<div class="form-group">
 							<label>Thứ</label>
-							<select name="THU" class="form-control" class="form-group" required>
+							<select name="THU" class="form-control" class="form-group" value="<?php echo $data['THU']; ?>" required>
 								<option><?php echo $data['THU']; ?></option>
 								<option>Thứ 2</option>
 								<option>Thứ 3</option>
@@ -122,7 +126,7 @@
 
 							<div class="form-group">
 							<label>Thời gian học</label>
-							<select name="THOIGIAN" class="form-control" class="form-group" required>
+							<select name="THOIGIAN" class="form-control" class="form-group" value="<?php echo $data['THOIGIAN']; ?>" required>
 								<option><?php echo $data['THOIGIAN']; ?></option>
 								<option>Từ tiết 1 - tiết 3 (Sáng)</option>
 								<option>Từ tiết 4 - tiết 6 (Sáng)</option>
@@ -140,7 +144,7 @@
 
 		                    <div class="form-group" >
 
-									<input type="submit" name="edit_teachingshecdule" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+									<input type="submit" name="edit_teachingschedule" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
 							</div>
 					    
                                             
