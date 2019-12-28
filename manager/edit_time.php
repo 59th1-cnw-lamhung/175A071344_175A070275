@@ -14,13 +14,16 @@
 				$MATHOIGIAN = $_POST["MATHOIGIAN"];
 				$NAMHOC = $_POST["NAMHOC"];
 				$HOCKI = $_POST["HOCKI"];
-				$GIAIDOAN = $_POST["GIAIDOAN"];
+				$GDBATDAU = $_POST["GDBATDAU"];
+				$GDKETTHUC = $_POST["GDKETTHUC"];
 				
 			
 				// Viết câu lệnh cập nhật thông tin người dùng
-				$sql = "UPDATE thoigianhoc SET NAMHOC = '$NAMHOC', HOCKI = '$HOCKI', GIAIDOAN = 'GIAIDOAN' WHERE MATHOIGIAN = '$MATHOIGIAN'";
+				$sql = "UPDATE thoigianhoc SET NAMHOC = '$NAMHOC', HOCKI = '$HOCKI', GDBATDAU = '$GDBATDAU', GDKETTHUC = '$GDKETTHUC' WHERE MATHOIGIAN = '$MATHOIGIAN'";
 				// thực thi câu $sql với biến conn lấy từ file connection.php
 				mysqli_query($conn,$sql);
+			
+
 				header('Location: manager.php');
 		
 			}
@@ -72,15 +75,22 @@
 								
 							</select>
 						</div>
+						
+
 						<div class="form-group">
-							<label>Giai đoạn</label>
-							<select name="GIAIDOAN" class="form-control" class="form-group" value="<?php echo $data['GIAIDOAN']; ?>">
-								<option><?php echo $data['GIAIDOAN']; ?></option>
-								<option>Giai đoạn 1</option>
-								<option>Giai đoạn 2</option>
-								
-							</select>
-						</div>
+								<label for="example-date-input" class="col-2 col-form-label">Thời gian bắt đầu</label>
+								<div class="col-10">
+									<input class="form-control" type="date" name="GDBATDAU" id="example-date-input">
+								</div>
+						    </div>
+
+					    <div class="form-group">
+							<label for="example-date-input" class="col-2 col-form-label">Thời gian kết thúc</label>
+							<div class="col-10">
+								<input class="form-control" type="date" name="GDKETTHUC" id="example-date-input">
+							</div>
+					    </div>
+
 						
 						<div class="form-group" >
 							<input type="submit" name="edit_time" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>

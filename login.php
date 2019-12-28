@@ -42,6 +42,10 @@ require_once("includes/connection.php");
 														<td class="info">
 															<input type="submit" name="btn_submit" value="Đăng nhập">
 														</td>
+
+														<td class="info">
+															<button><a href="index.php" style="text-decoration: none">Về trang chủ</a></button>
+														</td>
 														
 														<?php
 														// Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý

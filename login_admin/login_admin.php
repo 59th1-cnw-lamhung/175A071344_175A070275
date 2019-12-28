@@ -1,16 +1,11 @@
-<<<<<<< HEAD
-<?php
-//Gọi file connection.php ở bài trước
-=======
 <?php session_start(); ?>
 <?php
->>>>>>> 721941fb46e3e1c62d4d0da3c7c0022209cc5dd0
 require_once("../includes/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Admin</title>
+		<title>Quản trị</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--===============================================================================================-->
@@ -38,24 +33,14 @@ require_once("../includes/connection.php");
 	</head>
 	<body>
 		<div class="limiter" >
-<<<<<<< HEAD
-			<div class="container-login100" style="  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bg-03.jpg);
-=======
 			<div class="container-login100" style="  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/bg-05.jpg);
->>>>>>> 721941fb46e3e1c62d4d0da3c7c0022209cc5dd0
 				background-position: center;
 				background-size: cover;
 				background-attachment: fixed;">
 				<div class="wrap-login100">
-<<<<<<< HEAD
-					<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
-						<span class="login100-form-title-1">
-							<a class="sidebar-brand d-flex align-items-center justify-content-center " href="#" style="font-size: 40px; color: #18aa75;">
-=======
 					<div class="login100-form-title" style="background-image: url(images/bg-03.jpg);">
 						<span class="login100-form-title-1">
 							<a class="sidebar-brand d-flex align-items-center justify-content-center " href="#" style="font-size: 40px; color: #fff;">
->>>>>>> 721941fb46e3e1c62d4d0da3c7c0022209cc5dd0
 								<div class="sidebar-brand-icon rotate-n-15">
 									
 									<i class="fa fa-user-circle"></i>
@@ -76,13 +61,6 @@ require_once("../includes/connection.php");
 							<span class="focus-input100"></span>
 						</div>
 						<div class="container-login100-form-btn" style="color: #18aa75;">
-<<<<<<< HEAD
-							<button class="login100-form-btn" name="btn_submit" >
-							Đăng nhập
-							</button>
-						</div>
-												
-=======
 							<button class="login100-form-btn" name="btn_submit1" >
 							Đăng nhập
 							</button>
@@ -138,11 +116,12 @@ require_once("../includes/connection.php");
 																	}
 																}
 						?>
->>>>>>> 721941fb46e3e1c62d4d0da3c7c0022209cc5dd0
+
 					</form>
 				</div>
 			</div>
 		</div>
+		
 		<!--===============================================================================================-->
 		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 		<!--===============================================================================================-->

@@ -35,7 +35,7 @@
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 			mysqli_query($conn,$sql);
 
-			$message = "<script>alert('Đã thêm bài viết thành công!'); window.location='new_posts.php'</script>";
+			$message = "<script>alert('Đã thêm bài viết thành công !'); window.location='new_posts.php'</script>";
 	    }
 
 

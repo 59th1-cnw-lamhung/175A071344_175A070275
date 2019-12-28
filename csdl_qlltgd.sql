@@ -137,7 +137,8 @@ CREATE TABLE `thoigianhoc` (
   `MATHOIGIAN` varchar(10) NOT NULL,
   `NAMHOC` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `HOCKI` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `GIAIDOAN` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `GDBATDAU` date NOT NULL,
+  `GDKETTHUC` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

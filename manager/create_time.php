@@ -9,7 +9,9 @@
 		$MATHOIGIAN = $_POST["MATHOIGIAN"];
 		$NAMHOC = $_POST["NAMHOC"];
 		$HOCKI = $_POST["HOCKI"];
-		$GIAIDOAN = $_POST["GIAIDOAN"];
+		$GDBATDAU = $_POST["GDBATDAU"];
+		$GDKETTHUC = $_POST["GDKETTHUC"];
+
 
 		$SQL = "SELECT * FROM thoigianhoc WHERE MATHOIGIAN = '$MATHOIGIAN'";
 		$QUERY = mysqli_query($conn,$SQL);
@@ -24,7 +26,7 @@
         } 
         else
         {
-           $sql = "INSERT INTO thoigianhoc VALUES ('$MATHOIGIAN', '$NAMHOC', '$HOCKI', '$GIAIDOAN')";
+           $sql = "INSERT INTO thoigianhoc VALUES('$MATHOIGIAN', '$NAMHOC', '$HOCKI', '$GDBATDAU', '$GDKETTHUC')";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		    mysqli_query($conn,$sql);
 
@@ -88,15 +90,21 @@
 		                            
 		                        </select>
 							</div>
+							
+
 							<div class="form-group">
-								<label>Giai đoạn</label>
-								<select name="GIAIDOAN" class="form-control" class="form-group">
-									<option></option>
-		                            <option>Giai đoạn 1</option>
-		                            <option>Giai đoạn 2</option>
-		                            
-		                        </select>
-							</div>
+								<label for="example-date-input" class="col-2 col-form-label">Thời gian bắt đầu</label>
+								<div class="col-10">
+									<input class="form-control" type="date" name="GDBATDAU" id="example-date-input">
+								</div>
+						    </div>
+
+						    <div class="form-group">
+								<label for="example-date-input" class="col-2 col-form-label">Thời gian kết thúc</label>
+								<div class="col-10">
+									<input class="form-control" type="date" name="GDKETTHUC" id="example-date-input">
+								</div>
+						    </div>
 					    
 
 

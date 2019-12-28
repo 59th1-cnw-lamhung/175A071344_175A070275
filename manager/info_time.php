@@ -35,7 +35,8 @@
 			      <th scope="col">Mã thời gian</th>
 			      <th scope="col">Năm học</th>
 			      <th scope="col">Học kì</th>
-			      <th scope="col">Giai đoạn</th>
+			      <th scope="col">Thời gian bắt đầu</th>
+			      <th scope="col">Thời gian kết thúc</th>
 			      <th scope="col">Sửa</th>
 			      <th scope="col">Xóa</th>
 			    </tr>
@@ -50,7 +51,8 @@
 			      <th scope="row"><?php echo $data['MATHOIGIAN']; ?></th>
 			      <td><?php echo $data['NAMHOC']; ?></td>
 			      <td><?php echo $data['HOCKI']; ?></td>
-			      <td><?php echo $data['GIAIDOAN']; ?></td>
+			      <td><?php echo $data['GDBATDAU']; ?></td>
+			      <td><?php echo $data['GDKETTHUC']; ?></td>
 			      <td><a href="edit_time.php?id=<?php echo $MATHOIGIAN;?>">Sửa</a></td>
 			      <td><a href="info_time.php?id_delete=<?php echo $MATHOIGIAN;?>">Xóa</a></td>
 

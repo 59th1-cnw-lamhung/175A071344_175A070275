@@ -44,9 +44,10 @@
             $search = addslashes($_GET['search']);
             // Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
             if (empty($search)) {
-            echo '<script language="javascript">';
-            echo 'alert("BẠN PHẢI NHẬP DỮ LIỆU")';
-            echo '</script>';
+            
+            echo "<script>alert('Bạn phải nhập dữ liệu!'); window.location='search.php'</script>";
+
+            
             }
             else
             {
@@ -55,7 +56,7 @@
             $query = mysqli_query($conn,$sql);
             if(mysqli_num_rows($query)>0){
             echo '<table class="table" border="1"  cellspacing="0" cellpadding="10">';
-                echo '<thead class="bg-primary">';
+                echo '<thead class="bg-success">';
                     echo '<tr>';
                         echo '<th scope="col">Mã Giảng Viên</th>';
                         echo '<th scope="col">Tên</th>';
@@ -76,9 +77,7 @@
             }
             }
             else {
-            echo '<script language="javascript">';
-            echo 'alert("kHÔNG TÌM THẤY")';
-            echo '</script>';
+            echo "<script>alert('Không tìm thấy!'); window.location='search.php'</script>";
             }
             }
             }

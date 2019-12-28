@@ -53,7 +53,7 @@
 			      <th scope="row"><?php echo $data['ID']; ?></th>
 			      <td><?php echo $data['TIEUDE']; ?></td>
 			      <td><?php echo $data['NOIDUNG']; ?></td>
-			      <td><img src="<?php echo 'http://localhost/175A070275_175A071344/BTL_CNW_VIETCAO/style/images/'.$data['HINHANH']?>" width="100%" alt=""></td>
+			      <td><img src="<?php echo 'http://localhost/175A071344_175A070275/style/images/'.$data['HINHANH']?>" width="100%" alt=""></td>
 			      <td><?php echo $data['TACGIA']; ?></td>
 			      <td><?php echo $data['THOIGIANTAO']; ?></td>
 			      <td><?php echo $data['THOIGIANDANG']; ?></td>
