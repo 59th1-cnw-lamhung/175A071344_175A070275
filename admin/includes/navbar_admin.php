@@ -83,7 +83,16 @@
 
             else if ($data['QUYEN'] == '1')
             {
-              echo "<div style='color:GREEN; padding:5px 30px;'>ADMIN</div>";
+              $sql = "SELECT * from quantrivien where MAQUANTRIVIEN = '$id'";
+              $query = mysqli_query($conn,$sql);
+              $data = mysqli_fetch_array($query);
+              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Quản trị viên</div>";
+              
+            }
+
+            else
+            {
+              echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";
             }
           }
 

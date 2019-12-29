@@ -1,64 +1,71 @@
+<?php 
+include('../includes/connection.php');
+require("Classes/PHPExcel.php");
 
-
-<?php
-$conn = mysqli_connect("localhost","root","","csdl_btl_cnw");
-error_reporting(0);
-require_once("../style/vendor/upload_library/php-excel-reader/excel_reader2.php");
-require_once("../style/vendor/upload_library/SpreadsheetReader.php");
-
-if (isset($_POST["import"]))
+if(isset($_POST['import']))
 {
-       
-  $allowedFileType = ['application/vnd.ms-excel','text/xls','text/xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-  
-  if(in_array($_FILES["file"]["type"],$allowedFileType)){
+    $file = $_FILES['file']['tmp_name'];
+    
+    $objReader =PHPExcel_IOFactory::createReaderForFile($file);
 
-        $targetPath = 'uploads/'.$_FILES['file']['name'];
-        move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
-        
-        $Reader = new SpreadsheetReader($targetPath);
-        
-        $sheetCount = count($Reader->sheets());
-        
-        for($i=0;$i<$sheetCount;$i++)
-        {
-            $Reader->ChangeSheet($i);
+   
+    $objReader -> setLoadSheetsOnly('Trang_tính1');
+
+    $objEX = $objReader->load($file);
+    $sheetData = $objEX -> getActiveSheet()->toArray('null',true,true,true);
+
+    //print_r($sheetData);
+    $highRow = $objEX->setActiveSheetIndex()-> getHighestRow();
+    //echo $highRow;
+    for($row =2; $row <= $highRow; $row++ )
+    {
+        $ID = $sheetData[$row]['A'];
+        $TENTAIKHOAN = $sheetData[$row]['B'];
+        $MATKHAU = $sheetData[$row]['C'];
+        $QUYEN = $sheetData[$row]['D'];
+
+        $MATKHAU = md5($MATKHAU);
+
+        $sql = mysqli_query($conn, "INSERT INTO taikhoan (ID, TENTAIKHOAN, MATKHAU, QUYEN, TRANGTHAI)
+        VALUES ('$ID','$TENTAIKHOAN','$MATKHAU','$QUYEN','DAXACMINH')");
+
+        if($QUYEN == 2){
+            $ID = $sheetData[$row]['A'];
+            $TEN = $sheetData[$row]['E'];
+            $DIACHI = $sheetData[$row]['F'];
+            $SDT = $sheetData[$row]['G'];
             
-            foreach ($Reader as $Row)
-            {
-          
-                $ID = "";
-                if(isset($Row[0])) {
-                    $ID = mysqli_real_escape_string($conn,$Row[0]);
-                }
-                
-                $TENTAIKHOAN = "";
-                if(isset($Row[1])) {
-                    $TENTAIKHOAN = mysqli_real_escape_string($conn,$Row[1]);
-                }
-                
-                if (!empty($name) || !empty($description)) {
-                    $query = "insert into taikhoan(ID, TENTAIKHOAN) values('".$ID."','".$TENTAIKHOAN."')";
-                    $result = mysqli_query($conn, $query);
-                
-                    if (! empty($result)) {
-                        $type = "success";
-                        $message = "Excel Data Imported into the Database";
-                    } else {
-                        $type = "error";
-                        $message = "Problem in Importing Excel Data";
-                    }
-                }
-             }
+
+            $sql = mysqli_query($conn, "INSERT INTO quanly (MAQUANLY, TEN, DIACHI, SDT) VALUES ('$ID', '$TEN','$DIACHI','$SDT')");
+        }
+        else if($QUYEN == 3){
+            $ID = $sheetData[$row]['A'];
+            $TEN = $sheetData[$row]['E'];
+            $DIACHI = $sheetData[$row]['F'];
+            $SDT = $sheetData[$row]['G'];
+            
+
+            $sql = mysqli_query($conn, "INSERT INTO giangvien (MAGIANGVIEN, TEN, DIACHI, SDT) VALUES ('$ID', '$TEN','$DIACHI','$SDT')");
+        }
+        else if($QUYEN == 1){
+            $ID = $sheetData[$row]['A'];
+            $TEN = $sheetData[$row]['E'];
+            $DIACHI = $sheetData[$row]['F'];
+            $SDT = $sheetData[$row]['G'];
+            
+
+            $sql = mysqli_query($conn, "INSERT INTO quantrivien (MAQUANTRIVIEN, TEN, DIACHI, SDT) VALUES ('$ID', '$TEN','$DIACHI','$SDT')");
+        }
+
+    }
+    if($sql)
         
-         }
-  }
-  else
-  { 
-        $type = "error";
-        $message = "Invalid File Type. Upload Excel File.";
-  }
+        echo "<script>alert('Import thành công!'); window.location='upload.php'</script>";
+            
+    else
+        echo "<script>alert('Import thất bại!'); window.location='upload.php'</script>";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -76,8 +83,7 @@ if (isset($_POST["import"]))
         <form action="" method="post"
             name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
             <div>
-                <label>Choose Excel
-                    File</label> <input type="file" name="file"
+                <label>Lựa chọn file Excel</label> <input type="file" name="file"
                     id="file" accept=".xls,.xlsx">
                 <button type="submit" id="submit" name="import"
                     class="btn-submit">Import</button>
@@ -85,12 +91,9 @@ if (isset($_POST["import"]))
             </div>
         
         </form>
-        
     </div>
-    <div id="response" class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>"><?php if(!empty($message)) { echo $message; } ?></div>
-    
-         
-<?php
+
+    <?php
     $sqlSelect = "SELECT * FROM taikhoan";
     $result = mysqli_query($conn, $sqlSelect);
 
@@ -134,7 +137,5 @@ if (mysqli_num_rows($result) > 0)
 <?php 
 } 
 ?>
-
-        </body>
-    </html>
-
+    </body>
+ </html>

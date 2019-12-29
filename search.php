@@ -55,7 +55,7 @@
             // Thực thi câu truy vấn
             $query = mysqli_query($conn,$sql);
             if(mysqli_num_rows($query)>0){
-            echo '<table class="table" border="1"  cellspacing="0" cellpadding="10">';
+            echo '<table class="table" border="1"  cellspacing="0" cellpadding="10" >';
                 echo '<thead class="bg-success">';
                     echo '<tr>';
                         echo '<th scope="col">Mã Giảng Viên</th>';

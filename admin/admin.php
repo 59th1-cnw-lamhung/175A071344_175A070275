@@ -1,13 +1,13 @@
 
-<!--
 
-<?php /*session_start();*/ ?>
+<?php session_start(); ?>
 
 <?php
-/*if(isset($_SESSION['TENTAIKHOAN']))*/
+if(isset($_SESSION['TENTAIKHOAN']))
 {
 ?>
--->
+
+
 <?php include "includes/header_admin.php" ?>
 
 
@@ -54,17 +54,17 @@
 <?php include "includes/js_admin.php" ?>
 
 
-<!--
+
 <?php
 }
-/*else
+else
 {
 header('Location: ../login.php');
 }
-*/
+
 ?>
 
--->
+
 
 
 
