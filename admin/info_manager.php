@@ -15,10 +15,14 @@
 	if (isset($_GET["id_delete"])) {
 		$sql = "DELETE FROM taikhoan WHERE ID = ".$_GET["id_delete"];
 		mysqli_query($conn,$sql);
+
 		$sql = "DELETE FROM quanly WHERE MAQUANLY = ".$_GET["id_delete"];
 		mysqli_query($conn,$sql);
 		
+		
+       
 	}
+
 	
 ?>
 

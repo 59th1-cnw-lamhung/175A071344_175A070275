@@ -19,7 +19,7 @@
   </div>
   <!-- Nav Item - Pages Collapse Menu -->
   <li CLASS="nav-item">
-    <a CLASS="nav-link collapsed" href="admin.php" >
+    <a CLASS="nav-link collapsed" href="home.php" target="iframe">
       <i CLASS="fas fa-home"></i>
       <span>Trang chủ</span>
     </a>

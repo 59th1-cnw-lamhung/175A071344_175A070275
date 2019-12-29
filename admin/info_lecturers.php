@@ -19,8 +19,11 @@
 		mysqli_query($conn,$sql);
 		$sql = "DELETE FROM giangvien WHERE MAGIANGVIEN = ".$_GET["id_delete"];
 		mysqli_query($conn,$sql);
+
 		
+        
 	}
+
 	
 ?>
 
