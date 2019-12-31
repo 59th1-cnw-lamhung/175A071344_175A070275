@@ -2,7 +2,7 @@
 <ul CLASS="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
  
   <!-- Sidebar - Brand -->
-  <a CLASS="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+  <a CLASS="sidebar-brand d-flex align-items-center justify-content-center" href="home_manager.php" target="iframe">
     <div CLASS="sidebar-brand-icon rotate-n-15">
       
       <i class="fa fa-cube"></i>

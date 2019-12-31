@@ -64,7 +64,7 @@
 			      <td><?php echo $data['EMAIL']; ?></td>
 			      
 			      <td><?php echo $data['TRANGTHAI']; ?></td>
-			      <td><a href="edit_info.php?id=<?php echo $ID;?>">Sửa</a></td>
+			      <td><a href="edit_manager.php?id=<?php echo $ID;?>">Sửa</a></td>
 			      <td><a href="info_manager.php?id_delete=<?php echo $ID;?>">Xóa</a></td>
 
 			    </tr>

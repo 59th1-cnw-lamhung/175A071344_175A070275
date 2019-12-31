@@ -58,8 +58,8 @@
 			      <td><?php echo $data['DIADIEM']; ?></td>
 			      <td><?php echo $data['THOIGIAN']; ?></td>
 			      <td><?php echo $data['NOIDUNG']; ?></td>
-			      <td><a href="edit_teachingplan.php?id=<?php echo $MAKHGD;?>">Sửa</a></td>
-			      <td><a href="info_teachingplan.php?id_delete=<?php echo $MAKHGD;?>">Xóa</a></td>
+			      <td><a href="edit_teachingplan_manager.php?id=<?php echo $MAKHGD;?>">Sửa</a></td>
+			      <td><a href="info_teachingplan_manager.php?id_delete=<?php echo $MAKHGD;?>">Xóa</a></td>
 
 			    </tr>
 			    <?php } ?>

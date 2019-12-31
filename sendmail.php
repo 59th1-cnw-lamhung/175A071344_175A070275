@@ -3,7 +3,7 @@
 header('Content-Type: text/html; charset=UTF-8');  
 date_default_timezone_set('Asia/Bangkok');
 
-require 'PHPMailer/PHPMailerAutoload.php';
+require_once 'PHPMailer/PHPMailerAutoload.php';
 
 
 $mail = new PHPMailer;
@@ -50,16 +50,16 @@ $mail->Subject = 'THONG TIN TAI KHOAN';
 $mail->msgHTML($mail_body);
 
 
-if (!$mail->send()) {
+/*if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo "";
 
-}
+}*/
 
 if($mail->Send())								//Send an Email. Return true on success or false on error
 {
-	$message = "<script>alert('Tạo tài khoản thành công, yêu cầu người dùng kiểm tra email!'); window.location='admin.php'</script>";
+	$message = "<script>alert('Tạo tài khoản thành công, yêu cầu người dùng kiểm tra email!'); window.location='upload1.php'</script>";
 
 }
 			

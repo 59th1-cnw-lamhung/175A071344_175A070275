@@ -7,6 +7,7 @@
 <?php include "includes/header.php" ?>
 
 
+
     <body>
         <main>
             <div class="main">
@@ -51,11 +52,15 @@
             }
             else
             {
-            $sql = "SELECT * FROM GIANGVIEN WHERE TEN like '%$search%'";
+            $sql = "SELECT * FROM giangvien WHERE TEN like '%$search%'";
             // Thực thi câu truy vấn
             $query = mysqli_query($conn,$sql);
+
+
             if(mysqli_num_rows($query)>0){
-            echo '<table class="table" border="1"  cellspacing="0" cellpadding="10" >';
+
+
+            echo '<table class="table table-bordered table-striped" >';
                 echo '<thead class="bg-success">';
                     echo '<tr>';
                         echo '<th scope="col">Mã Giảng Viên</th>';
@@ -71,7 +76,7 @@
                     echo '<td>'.$data['TEN'].'</td>';
                     echo '<td>'.$data['DIACHI'].'</td>';
                     echo '<td>'.$data['SDT'].'</td>';
-                    echo'<td><a href="shedule.php?search='.$data['MAGIANGVIEN'].'">XEM CHI TIẾT</a></td>';
+                    echo'<td><a href="schedule.php?search='.$data['MAGIANGVIEN'].'">XEM CHI TIẾT</a></td>';
                 echo '</tr>';
             echo '</table>';
             }

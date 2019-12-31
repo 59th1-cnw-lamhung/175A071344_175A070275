@@ -33,7 +33,8 @@
       <div CLASS="bg-white py-2 collapse-inner rounded">
         <h6 CLASS="collapse-header">Chức năng</h6>
         <a CLASS="collapse-item" href="register.php" target="iframe">Tạo tài khoản</a>
-        <a CLASS="collapse-item" href="upload.php" target="iframe">Upload file</a>
+        <!--<a CLASS="collapse-item" href="upload.php" target="iframe">Upload file</a>-->
+        <a CLASS="collapse-item" href="upload1.php" target="iframe">Upload file</a>
         <a CLASS="collapse-item" href="info_lecturers.php" target="iframe">Thông tin giảng viên</a>
         <a CLASS="collapse-item" href="info_manager.php" target="iframe">Thông tin quản lý</a>
       </div>

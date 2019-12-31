@@ -84,7 +84,7 @@ if(isset($_POST['import']))
             name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data">
             <div>
                 <label>Lựa chọn file Excel</label> <input type="file" name="file"
-                    id="file" accept=".xls,.xlsx">
+                    id="file" accept=".xls,.xlsx,.csv">
                 <button type="submit" id="submit" name="import"
                     class="btn-submit">Import</button>
         

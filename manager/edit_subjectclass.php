@@ -23,7 +23,8 @@
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		mysqli_query($conn,$sql);
 
-		header('Location: manager.php');
+		echo "<script>alert('Cập nhật thành công!'); window.location='info_subjectclass.php'</script>";
+	        exit;
        
 	}
  

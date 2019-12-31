@@ -26,15 +26,15 @@
 	    $update_pwd = mysqli_query($conn, 
 	    	"UPDATE taikhoan set MATKHAU = '$MATKHAUNEW' where ID = ".$_SESSION['ID']);
 
-			echo "<script>alert('Đổi mật khẩu thành công!'); window.location='manager.php'</script>";
+			echo "<script>alert('Đổi mật khẩu thành công!'); window.location='manager_changepass.php'</script>";
 		}
 		else{
-			echo "<script>alert('Mật khẩu với và mật khẩu mới nhập lại không trùng nhau! Yêu cầu nhập lại'); window.location='manager.php'</script>";
+			echo "<script>alert('Mật khẩu với và mật khẩu mới nhập lại không trùng nhau! Yêu cầu nhập lại'); window.location='manager_changepass.php'</script>";
 		}
 	}
 	else
 	{
-		echo "<script>alert('Mật khẩu cũ của bạn sai!'); window.location='manager.php'</script>";
+		echo "<script>alert('Mật khẩu cũ của bạn sai!'); window.location='manager_changepass.php'</script>";
 	}
 
 		
@@ -66,15 +66,15 @@
 						
 							<div class="form-group">
 								<label>Mật khẩu cũ</label>
-								<input type="password" name="MATKHAUCU" class="form-control" required />
+								<input type="text" name="MATKHAUCU" class="form-control" required />
 							</div>
 							<div class="form-group">
 								<label>Mật khẩu mới</label>
-								<input type="password" name="MATKHAUMOI" class="form-control" required/>
+								<input type="text" name="MATKHAUMOI" class="form-control" required/>
 							</div>
 							<div class="form-group">
 								<label>Nhập lại mật khẩu mới</label>
-								<input type="password" name="NLMATKHAUMOI" class="form-control" required/>
+								<input type="text" name="NLMATKHAUMOI" class="form-control" required/>
 							</div>
 					    
 

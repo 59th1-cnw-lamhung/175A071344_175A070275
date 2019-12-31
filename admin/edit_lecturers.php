@@ -12,7 +12,7 @@
 	<body>
 
 <?php
-	if (isset($_POST["register"])) {//name chỗ nút cập nhâtj
+	if (isset($_POST["edit_manager"])) {//name chỗ nút cập nhâtj
 		//lấy thông tin từ các form bằng phương thức POST
 		$ID = $_POST["id"];
 		$TENTAIKHOAN = $_POST["user_name"];
@@ -46,7 +46,8 @@
 		    
         }
 
-		header('Location: admin.php');
+        echo "<script>alert('Cập nhật thông tin thành công !'); window.location='home.php'</script>";
+
        
 	}
  
@@ -56,10 +57,10 @@
 	}
 
 
-	$sql = "SELECT TENTAIKHOAN, EMAIL, QUYEN, ID, TEN, DIACHI, SDT, MAQUANLY
+	$sql = "SELECT TENTAIKHOAN, EMAIL, QUYEN, ID, TEN, DIACHI, SDT, MAGIANGVIEN
 	         FROM taikhoan
-             INNER JOIN quanly
-             ON taikhoan.ID = quanly.MAQUANLY
+             INNER JOIN giangvien
+             ON taikhoan.ID = giangvien.MAGIANGVIEN
              WHERE taikhoan.ID = ".$id;
 	$query = mysqli_query($conn,$sql);
       
@@ -74,18 +75,18 @@
     
 
 	    <div class="panel panel-default">
-				<div class="panel-heading"><h4>Cập nhật tài khoản</h4></div>
+				<div class="panel-heading"><h4>Cập nhật tài khoản giảng viên</h4></div>
 				<div class="panel-body" style="margin-left: -15px;">
 					<?php
 		              while ( $data = mysqli_fetch_array($query) ) {
 		              	
 	                ?>
-					<form action="edit_info.php" method="POST">
+					<form action="edit_lecturers.php" method="POST">
 						
 
 						<div class="form-row">
 							<div class="form-group col-md-3" >
-								<label>Id</label>
+								<label>ID</label>
 								<input type="number" name="id" class="form-control" required value="<?php echo $data['ID']; ?>" readonly/>
 							</div>
 							<div class="form-group col-md-9">
@@ -131,7 +132,7 @@
 
 		                    <div class="form-group" >
 
-									<input type="submit" name="register" id="register" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+									<input type="submit" name="edit_manager" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
 							</div>
 					    </div>
                                             

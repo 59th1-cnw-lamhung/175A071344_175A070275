@@ -270,7 +270,7 @@ if(isset($_POST["register"]))
 
 						<div class="form-row">
 							<div class="form-group col-md-3" >
-								<label>Id</label>
+								<label>ID</label>
 								<input type="number" name="id" class="form-control" required />
 							</div>
 							<div class="form-group col-md-9">

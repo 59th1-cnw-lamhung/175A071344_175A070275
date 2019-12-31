@@ -68,7 +68,7 @@
               $sql = "SELECT * from quanly where MAQUANLY = '$id'";
               $query = mysqli_query($conn,$sql);
               $data = mysqli_fetch_array($query);
-              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Quản lý</div>";
+              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$TENTAIKHOAN. " (ID: ".$id.") <span style='color:#000'>  </span> * Quản lý</div>";
             }
 
             else if($data['QUYEN'] == 3)
@@ -77,7 +77,7 @@
               $sql = "SELECT * from giangvien where MAGIANGVIEN = '$id'";
               $query = mysqli_query($conn,$sql);
               $data = mysqli_fetch_array($query);
-              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Giảng viên</div>";
+              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$TENTAIKHOAN. " (ID: ".$id.") <span style='color:#000'>  </span> * Giảng viên</div>";
 
             }
 
@@ -86,7 +86,7 @@
               $sql = "SELECT * from quantrivien where MAQUANTRIVIEN = '$id'";
               $query = mysqli_query($conn,$sql);
               $data = mysqli_fetch_array($query);
-              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Quản trị viên</div>";
+              echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$TENTAIKHOAN. " (ID: ".$id.") <span style='color:#000'>  </span> * Quản trị viên</div>";
               
             }
 
@@ -112,11 +112,89 @@
         <a CLASS="dropdown-item" href="#" id="profile" role="button" data-toggle="dropdown"><i CLASS="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Cá nhân
         </a>
-        <div CLASS="dropdown-list dropdown-menu dropdown-menu-right shadow animated-grow-in" aria-labelledby="profile" style="top: 12px; right: 165px;">
+        <div CLASS="dropdown-list dropdown-menu dropdown-menu-right shadow animated-grow-in" aria-labelledby="profile" style="top: 12px; right: 165px; ">
           <h6 CLASS="dropdown-header">
-          Message Center
+          Thông tin cá nhân
           </h6>
-          <p>dvsdhjvbjdshvb</p>
+
+
+          <?php
+          if(isset($_SESSION['TENTAIKHOAN']))
+          {
+            $TENTAIKHOAN = $_SESSION['TENTAIKHOAN'];
+
+            $sql = "SELECT * from taikhoan where TENTAIKHOAN = '$TENTAIKHOAN'";
+            $query = mysqli_query($conn,$sql);
+            $data = mysqli_fetch_array($query);
+            $id = $data['ID'];
+            $Email = $data['EMAIL'];
+
+            if($data['QUYEN'] == 2)
+            {
+
+              $sql = "SELECT * from quanly where MAQUANLY = '$id'";
+              $query = mysqli_query($conn,$sql);
+              $data = mysqli_fetch_array($query);
+              
+              
+              echo "
+                  <p style='padding: 0px 20px;'> Họ và tên: ".$data['TEN']."</p>
+                  <p style='padding: 0px 20px;'> Email: ".$Email." </p>
+                  <p style='padding: 0px 20px;'> Địa chỉ: ".$data['DIACHI']." </p>
+                  <p style='padding: 0px 20px;'> SĐT: ".$data['SDT']." </p>
+           
+              ";
+            }
+
+            else if($data['QUYEN'] == 3)
+            {
+
+              $sql = "SELECT * from giangvien where MAGIANGVIEN = '$id'";
+              $query = mysqli_query($conn,$sql);
+              $data = mysqli_fetch_array($query);
+              //echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Giảng viên</div>";
+             echo "
+                  <p style='padding: 0px 20px;'> Họ và tên: ".$data['TEN']."</p>
+                  <p style='padding: 0px 20px;'> Email: ".$Email." </p>
+                  <p style='padding: 0px 20px;'> Địa chỉ: ".$data['DIACHI']." </p>
+                  <p style='padding: 0px 20px;'> SĐT: ".$data['SDT']." </p>
+           
+              ";
+            }
+
+            else if ($data['QUYEN'] == '1')
+            {
+              $sql = "SELECT * from quantrivien where MAQUANTRIVIEN = '$id'";
+              $query = mysqli_query($conn,$sql);
+              $data = mysqli_fetch_array($query);
+              //echo "<div style='color:green; padding:5px 20px; font-size: 15px'>" .$data['TEN']. " (".$id.") <span style='color:#000'>  Vai trò:</span> Quản trị viên</div>";
+
+              echo "
+                  <p style='padding: 0px 20px;'> Họ và tên: ".$data['TEN']."</p>
+                  <p style='padding: 0px 20px;'> Email: ".$Email." </p>
+                  <p style='padding: 0px 20px;'> Địa chỉ: ".$data['DIACHI']." </p>
+                  <p style='padding: 0px 20px;'> SĐT: ".$data['SDT']." </p>
+           
+              ";
+              
+            }
+
+            else
+            {
+              echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";
+            }
+          }
+
+          else
+          {
+            echo "<div style='color:blue; padding:5px 30px;'> Khách </div>";
+          }
+          
+          ?>
+
+
+
+          
         </div>
         <div CLASS="dropdown-divider"></div>
         <a class="dropdown-item" href="../logout.php">

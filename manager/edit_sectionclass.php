@@ -13,7 +13,7 @@
 <?php
 	if (isset($_POST["edit_sectionclass"])) {//name chỗ nút cập nhâtj
 		//lấy thông tin từ các form bằng phương thức POST
-		$MALOPHOCPHAN = $_POST["MALOPMONHOC"];
+		$MALOPHOCPHAN = $_POST["MALOPHOCPHAN"];
 		$TENLOPHOCPHAN = $_POST["TENLOPHOCPHAN"];
 		$MALOPMONHOC = $_POST["MALOPMONHOC"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
@@ -24,7 +24,8 @@
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		mysqli_query($conn,$sql);
 
-		header('Location: manager.php');
+		echo "<script>alert('Cập nhật thành công!'); window.location='info_sectionclass.php'</script>";
+	        exit;
        
 	}
  
@@ -67,10 +68,24 @@
 							</div>
 
 
+							
+
 							<div class="form-group">
 								<label>Mã lớp môn học</label>
-								<input type="text" name="MALOPMONHOC" class="form-control" required value="<?php echo $data['MALOPMONHOC']; ?>"/>
-							</div>
+								<?php
+								$sql = mysqli_query($conn,"select * from lopmonhoc") or die(myqli_error($conn));
+								if (mysqli_num_rows($sql) > 0) {
+								$i=0;
+								?>
+								<select class="form-control" name = "MALOPMONHOC">
+									<option><?php echo $data['MALOPMONHOC']; ?></option>
+									<?php while($row=mysqli_fetch_assoc($sql)) {
+									$i++; ?>
+
+									<option><?php echo $row['MALOPMONHOC']; ?></option>
+									<?php }}  ?>
+								</select>
+						    </div>
 
 							
 
@@ -93,10 +108,23 @@
 						    </div>
 
 
+							
 							<div class="form-group">
 								<label>Mã thời gian</label>
-								<input type="text" name="MATHOIGIAN" class="form-control" required value="<?php echo $data['MATHOIGIAN']; ?>"/>
-							</div>
+								<?php
+								$sql = mysqli_query($conn,"select * from thoigianhoc") or die(myqli_error($conn));
+								if (mysqli_num_rows($sql) > 0) {
+								$i=0;
+								?>
+								<select class="form-control" name = "MATHOIGIAN">
+									<option><?php echo $data['MATHOIGIAN']; ?></option>
+									<?php while($row=mysqli_fetch_assoc($sql)) {
+									$i++; ?>
+
+									<option><?php echo $row['MATHOIGIAN']; ?></option>
+									<?php }}  ?>
+								</select>
+						    </div>
 					    
 
 					    

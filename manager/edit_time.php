@@ -24,7 +24,8 @@
 				mysqli_query($conn,$sql);
 			
 
-				header('Location: manager.php');
+				echo "<script>alert('Cập nhật thành công!'); window.location='info_time.php'</script>";
+	        exit;
 		
 			}
 		
