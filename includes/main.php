@@ -5,7 +5,7 @@
     	<div class="right-home">
     		<div class="box-right-1">
     			<div class="box-right-1-top">
-    				<span>LIÊN THÔNG</span>
+    				<span>THÔNG TIN TOÀN TRƯỜNG</span>
     				<span><a href=""><b>Xem tất cả</b></a></span>
     			</div>
     			<div class="box-right-1-content">
@@ -48,7 +48,7 @@
 
     		<div class="box-right-1">
     			<div class="box-right-1-top">
-    				<span>CAO HỌC</span>
+    				<span>THÔNG TIN GIẢNG VIÊN</span>
     				<span><a href=""><b>Xem tất cả</b></a></span>
     			</div>
     			<div class="box-right-1-content">

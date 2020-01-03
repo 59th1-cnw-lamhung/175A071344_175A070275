@@ -13,6 +13,9 @@
 		$sql = 'DELETE FROM lophocphan WHERE MALOPHOCPHAN LIKE "' . $_GET["id_delete1"] .'"';
 
 		mysqli_query($conn,$sql);
+
+		echo "<script>alert('Xóa thành công !'); window.location='info_sectionclass.php'</script>";
+		exit;
 		
 		
 	}

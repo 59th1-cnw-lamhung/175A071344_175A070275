@@ -15,7 +15,8 @@
 
 		mysqli_query($conn,$sql);
 		
-		
+		echo "<script>alert('Xóa thành công !'); window.location='info_posts.php'</script>";
+		exit;
 	}
 	
 ?>
@@ -29,7 +30,7 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</head>
 		<body>
-	        <table class="table table-bordered">
+	        <table class="table">
 			  <thead class="thead-light">
 			    <tr>
 			      <th scope="col">ID </th>

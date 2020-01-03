@@ -16,7 +16,8 @@
 		mysqli_query($conn,$sql);
 		
 		
-		
+		echo "<script>alert('Xóa thành công !'); window.location='info_majors.php'</script>";
+		exit;
 	}
 	
 ?>

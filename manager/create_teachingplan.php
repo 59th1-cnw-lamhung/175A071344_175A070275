@@ -6,6 +6,7 @@ $message = '';
 		//lấy thông tin từ các form bằng phương thức POST
 		$MAKHGD = $_POST["MAKHGD"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
+		
 		$MALOPHOCPHAN = $_POST["MALOPHOCPHAN"];
 		$NGAY = $_POST["NGAY"];
 		$THU = $_POST["THU"];
@@ -66,7 +67,7 @@ $message = '';
 						<div class="form-group">
 							<label>Mã giảng viên</label>
 							<?php
-							$sql = mysqli_query($conn,"select * from giangvien") or die(myqli_error($conn));
+							$sql = mysqli_query($conn,"SELECT * from giangvien") or die(myqli_error($conn));
 							if (mysqli_num_rows($sql) > 0) {
 							$i=0;
 							?>
@@ -84,7 +85,8 @@ $message = '';
 						<div class="form-group">
 							<label>Mã lớp học phần</label>
 							<?php
-							$sql = mysqli_query($conn,"select * from lophocphan") or die(myqli_error($conn));
+							$sql = mysqli_query($conn,"SELECT * from lophocphan") or die(myqli_error($conn));
+
 							if (mysqli_num_rows($sql) > 0) {
 							$i=0;
 							?>

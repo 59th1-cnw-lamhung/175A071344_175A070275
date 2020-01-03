@@ -143,7 +143,7 @@
       <div CLASS="bg-white py-2 collapse-inner rounded">
         <h6 CLASS="collapse-header">Chức năng</h6>
         <a CLASS="collapse-item" href="manager_changepass.php" target="iframe">Đổi mật khẩu</a>
-        <a CLASS="collapse-item" href="manager_changepass.php" target="iframe">Thông tin cá nhân</a>
+        <!--<a CLASS="collapse-item" href="manager_changepass.php" target="iframe">Thông tin cá nhân</a>-->
         
         
       </div>

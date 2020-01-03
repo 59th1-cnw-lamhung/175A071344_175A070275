@@ -4,6 +4,8 @@
 	$sql = "SELECT MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG 
 	        FROM kehoachgiangday";
 	$query = mysqli_query($conn,$sql);
+
+
 ?>
 
 <!--
