@@ -11,9 +11,10 @@
 	<body>
 
 <?php
-    if (isset($_POST["edit_teachingschedule"]))
+    if (isset($_POST["edit_teachingschedule1"]))
 	{//name chỗ nút cập nhâtj
 		//lấy thông tin từ các form bằng phương thức POST
+		$MALTTT = $_POST["MALTTT"];
 		$MAKHGD = $_POST["MAKHGD"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
 		$MALOPHOCPHAN = $_POST["MALOPHOCPHAN"];
@@ -26,45 +27,33 @@
 		// Viết câu lệnh cập nhật thông tin người dùng
 		
 		// thực thi câu $sql với biến conn lấy từ file connection.php
-        $SQL = "SELECT * FROM lichtrinhthucte WHERE MAKHGD = '$MAKHGD'";
-		$QUERY = mysqli_query($conn,$SQL);
-		$NUM = mysqli_num_rows($QUERY);
+        
 
 
-		if($NUM > 0)
-        {
-	        echo "<script>alert('Đã có lịch trình thực tế này !'); window.location='info_teachingplan.php'</script>";
-	        
-        } 
-        else
-        {
-            
+			$sql = "UPDATE lichtrinhthucte SET MAGIANGVIEN = '$MAGIANGVIEN', MALOPHOCPHAN = '$MALOPHOCPHAN', NGAY = '$NGAY', THU = '$THU', DIADIEM = '$DIADIEM', THOIGIAN = '$THOIGIAN', NOIDUNG = '$NOIDUNG' WHERE MALTTT = '$MALTTT'";
 
-			/*$sql = "UPDATE lichtrinhthucte SET MAGIANGVIEN = '$MAGIANGVIEN', MALOPHOCPHAN = '$MALOPHOCPHAN', NGAY = '$NGAY', THU = '$THU', DIADIEM = '$DIADIEM', THOIGIAN = '$THOIGIAN', NOIDUNG = '$NOIDUNG' WHERE MAKHGD = '$MAKHGD'";*/
-
-			$sql = "INSERT INTO lichtrinhthucte(MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG)
+			/*$sql = "INSERT INTO lichtrinhthucte(MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG)
 			VALUES ('$MAKHGD', '$MAGIANGVIEN', '$MALOPHOCPHAN', '$NGAY', '$THU', '$DIADIEM', '$THOIGIAN', '$NOIDUNG')";
-
+            */
 			mysqli_query($conn,$sql);
 
 			//header('Location: info_teachingschedule.php');
 
-			echo "<script>alert('Đã thêm lịch trình thực tế thành công !'); window.location='info_teachingplan.php'</script>";
+			echo "<script>alert('Đã sửa lịch trình thực tế thành công !'); window.location='info_teachingschedule.php'</script>";
 	       
 	    }
 
 
-	/*$sql = "UPDATE lichtrinhthucte SET MAGIANGVIEN = '$MAGIANGVIEN', MALOPHOCPHAN = '$MALOPHOCPHAN', NGAY = '$NGAY', THU = '$THU', DIADIEM = '$DIADIEM', THOIGIAN = '$THOIGIAN', NOIDUNG = '$NOIDUNG' WHERE MAKHGD = '$MAKHGD'";
-*/
-}
+	
+
 
 
 
     $id = -1;
-	if (isset($_GET['id_tt'])) {
-		$id = $_GET['id_tt'];
+	if (isset($_GET['id1'])) {
+		$id = $_GET['id1'];
 	}
-    $sql = "SELECT * FROM kehoachgiangday WHERE MAKHGD = '$id'";
+    $sql = "SELECT * FROM lichtrinhthucte WHERE MALTTT = '$id'";
 	$query = mysqli_query($conn, $sql);
 
 	
@@ -84,9 +73,12 @@
 		              while ( $data = mysqli_fetch_array($query) ) {
 		              	
 	                ?>
-					<form action="edit_teachingschedule.php" method="POST">
+					<form action="edit_teachingschedule1.php" method="POST">
 						
-
+                            <div class="form-group" >
+								<label>Mã lịch trình thực tế</label>
+								<input type="text" name="MALTTT" class="form-control" required value="<?php echo $data['MALTTT']; ?>" readonly/>
+							</div>
 
 							<div class="form-group" >
 								<label>Mã kế hoạch giảng dạy dự kiến</label>
@@ -167,7 +159,7 @@
 
 		                    <div class="form-group" >
 
-									<input type="submit" name="edit_teachingschedule" value="Lịch thực tế" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
+									<input type="submit" name="edit_teachingschedule1" value="Cập nhật" class="btn btn-success" style="margin-top: 25px; margin-left: 0px;"/>
 							</div>
 					    
                                             

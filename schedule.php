@@ -162,7 +162,7 @@ require('includes/connection.php');
 			
 			?>
 			<tr>
-				<th scope="row"><?php echo $data['MALTT']; ?></th>
+				<th scope="row"><?php echo $data['MALTTT']; ?></th>
 				<th><?php echo $data['MAKHGD']; ?></th>
 				<td><?php echo $data['MAGIANGVIEN']; ?></td>
 				<td><?php echo $data['MALOPHOCPHAN']; ?></td>

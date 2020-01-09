@@ -297,95 +297,213 @@
 		<p>- <b>Giảng viên:</b> Cho biết giảng viên giảng dạy lớp học phần này là ai.</p>
 		<p>- <b>Sỹ số:</b> Là số sinh viên đã được quy định của lớp học phần đó</p>
 		<p>- <b>Đã ĐK</b> (Đã đăng ký): Là số sinh viên đăng ký tại lớp đó. Nếu số hiển thị ở cột Đã đăng ký này nhỏ hơn cột Sỹ số thì sinh viên có thể đăng ký vào được. Nếu bằng cột sĩ số sẽ không đăng ký được nữa (lớp học phần đã đầy).</p>
-		Sau khi lựa chọn được lớp học phần phù hợp, bạn chọn nó ở cột Chọn và bấm nút Đăng ký.
-		Nếu thỏa mãn các điều kiện về thời gian không trùng lặp và lớp học phần đó chưa đầy, chương trình sẽ báo đăng ký thành công.
-		Nếu lớp học đã đầy, chương trình sẽ báo lớp học phần đó đã đầy và không đăng ký được.
-		Nếu lớp học trùng thời gian với các lớp học phần bạn đã đăng ký, chương trình không cho phép đăng ký và sẽ thông báo trùng cho bạn .
-		Đối với những trường hợp đăng ký môn học có cả lớp học phần Lý thuyết và Bài tập, sinh viên phải chọn lựa cả lớp Lý thuyết và Thực hành tại mỗi lần đăng ký. Khi lựa chọn đăng ký những môn này cần lưu ý: Lớp LT sẽ được chia ra các lớp nhỏ TH cùng nhóm nên khi đăng ký phải lựa chọn các lớp LT và TH cùng nhóm với nhau. Nếu không chương trình sẽ không cho đăng ký và thông báo như sau:
+		
+		<p>Sau khi lựa chọn được lớp học phần phù hợp, bạn chọn nó ở cột Chọn và bấm nút Đăng ký.
+		</p>
+		<p>Nếu thỏa mãn các điều kiện về thời gian không trùng lặp và lớp học phần đó chưa đầy, chương trình sẽ báo đăng ký thành công.
+		</p>
+		<p>Nếu lớp học đã đầy, chương trình sẽ báo lớp học phần đó đã đầy và không đăng ký được.
+		</p>
+		<p>Nếu lớp học trùng thời gian với các lớp học phần bạn đã đăng ký, chương trình không cho phép đăng ký và sẽ thông báo trùng cho bạn .
+		</p>
+		<p>Đối với những trường hợp đăng ký môn học có cả lớp học phần Lý thuyết và Bài tập, sinh viên phải chọn lựa cả lớp Lý thuyết và Thực hành tại mỗi lần đăng ký. Khi lựa chọn đăng ký những môn này cần lưu ý: Lớp LT sẽ được chia ra các lớp nhỏ TH cùng nhóm nên khi đăng ký phải lựa chọn các lớp LT và TH cùng nhóm với nhau. Nếu không chương trình sẽ không cho đăng ký và thông báo như sau:
 		Nút Học nâng điểm nằm bên cạnh nút Đăng ký dành cho những trường hợp sinh viên muốn đăng ký học cải thiện điểm của mình (chỉ áp dụng đối với sinh viên đạt điểm D, D+, C; những sinh viên đạt điểm B, A không được học nâng điểm)
-		Sau khi đăng ký được thành công, kết quả đăng ký học của sinh viên sẽ được hiển thị ở bảng bên dưới bảng các lớp học phần lựa chọn .
-		Ở phần Kết quả đăng ký học, có thêm tham số:
-		- Số TC (số tín chỉ): là số tín chỉ ứng với mỗi môn học mà sinh viên đã đăng ký.
-		- Học phí: là học phí tương ứng với số tín chỉ của mỗi môn học.
-		Bên dưới kết quả đăng ký học sẽ có Tổng số tín chỉ và số tiền các bạn sinh viên đã phải nộp cho các môn học mà mình đã đăng ký.
-		Đối với những trường hợp các bạn sinh viên muốn hủy kết quả đăng ký học môn học nào đó để tìm một sự lựa chọn khác, check vào môn học muốn hủy rồi bấm nút Hủy đăng ký.
-		3.2 In kết quả đăng ký học
-		Sau khi các bạn sinh viên đăng ký học xong, cần phải in kết quả đăng ký học ra để theo dõi quá trình học tập của mình vì có thể không phải lúc nào các bạn cũng có thể lên mạng Internet để kiểm tra kết quả đăng ký học.
-		Cách in kết quả đăng ký học (Có thể lấy bất cứ thời khóa biểu của đợt học nào của học kỳ nào đó trong năm học khác nhau) như sau :
-		Quay trở lại trang chủ bằng cách bấm vào nút Trang chủ
-		chương trình sẽ quay trở lại trang chủ, sau đó chọn chức năng Đăng ký học => Kết quả đăng ký học.
-		
-		Sau khi chọn theo menu trên, chương trình sẽ đưa tới một chức năng mà sinh viên có thể chọn Học kỳ và đợt học để xem và in kết quả đăng ký học theo các biểu mẫu khác nhau.
-		Cách xem là chọn Học kỳ mà sinh viên muốn xem, sau đó chọn đợt học ngay bên cạnh phía tay phải, bấm nút Xem kết quả đăng ký học. Khi đó chương trình sẽ hiển thị kết quả đăng ký học của đợt hoc, học kỳ và năm học mà sinh viên chọn. Có thể chọn kiểu thời khóa biểu và sau đó bấm nút Xuất file excel để chương trình đưa ra cho người dùng file Excel theo mẫu đã chọn.
-		Bấm nút Open để mở ra xem ngay, hoặc bấm nút Save để lưu vào máy tính, sau đó có thể đem file đi in ra để sử dụng.
-		(Chú ý: Microsoft Excel là một ứng dụng văn phòng của Microsoft (Microsoft Office), máy tính cần phải cài đặt chương trình này khi muốn xem được file trên)
-		Một kiểu kết quả đăng ký học được lấy ra từ phần mềm
-		Đây là file excel Thời khóa biểu được chương trình xuất ra theo kiểu lớp học phần. Ở đây có đầy đủ thông tin mà sinh viên cần biết như Họ tên, Mã sinh viên, Lớp, khóa, ngành, các môn học đăng ký học, số tín chỉ, thời gian học và học phí phải nộp.
-		3.3. Xem quá trình đăng ký học của mình
-		Để có thể kiểm tra được quá trình đăng ký học tập của mình từ khi bắt đầu đăng ký học, sinh viên sử dụng chức năng Đăng ký học => Quá trình đăng ký học.
-		Ở đây cần chọn học kỳ và đợt học và bấm vào nútđể xem. Nếu không chọn học kỳ và đợt học, chương trình sẽ liệt kê toàn bộ các môn học mà sinh viên đã đăng ký học. Có các thông tin lưu vết quá trình đăng ký học như Người đăng ký (nếu sinh viên tự đăng ký thì sẽ hiển thị là Sinh viên, Nếu quản trị hệ thống hoặc Cố vấn học tập đăng ký thì sẽ hiển thị tên người đăng ký), thời gian đăng ký (theo giờ của máy chủ).
+		</p>
+		<p>Sau khi đăng ký được thành công, kết quả đăng ký học của sinh viên sẽ được hiển thị ở bảng bên dưới bảng các lớp học phần lựa chọn .
+		</p>
+		<p>Ở phần Kết quả đăng ký học, có thêm tham số:
+		</p>
+		<p>- Số TC (số tín chỉ): là số tín chỉ ứng với mỗi môn học mà sinh viên đã đăng ký.
+		</p>
+		<p>- Học phí: là học phí tương ứng với số tín chỉ của mỗi môn học.
+		</p>
+		<p>Bên dưới kết quả đăng ký học sẽ có Tổng số tín chỉ và số tiền các bạn sinh viên đã phải nộp cho các môn học mà mình đã đăng ký.
+		</p>
+		<p>Đối với những trường hợp các bạn sinh viên muốn hủy kết quả đăng ký học môn học nào đó để tìm một sự lựa chọn khác, check vào môn học muốn hủy rồi bấm nút Hủy đăng ký.
+		</p>
+		<p>3.2 In kết quả đăng ký học
+		</p>
+		<p>Sau khi các bạn sinh viên đăng ký học xong, cần phải in kết quả đăng ký học ra để theo dõi quá trình học tập của mình vì có thể không phải lúc nào các bạn cũng có thể lên mạng Internet để kiểm tra kết quả đăng ký học.
+		</p>
+		<p>Cách in kết quả đăng ký học (Có thể lấy bất cứ thời khóa biểu của đợt học nào của học kỳ nào đó trong năm học khác nhau) như sau:
+		</p>
+		<p>Quay trở lại trang chủ bằng cách bấm vào nút Trang chủ chương trình sẽ quay trở lại trang chủ, sau đó chọn chức năng Đăng ký học => Kết quả đăng ký học.
+		</p>
+		<p>Sau khi chọn theo menu trên, chương trình sẽ đưa tới một chức năng mà sinh viên có thể chọn Học kỳ và đợt học để xem và in kết quả đăng ký học theo các biểu mẫu khác nhau.
+		</p>
+		<p>Cách xem là chọn Học kỳ mà sinh viên muốn xem, sau đó chọn đợt học ngay bên cạnh phía tay phải, bấm nút Xem kết quả đăng ký học. Khi đó chương trình sẽ hiển thị kết quả đăng ký học của đợt hoc, học kỳ và năm học mà sinh viên chọn. Có thể chọn kiểu thời khóa biểu và sau đó bấm nút Xuất file excel để chương trình đưa ra cho người dùng file Excel theo mẫu đã chọn.
+		</p>
+		<p>Bấm nút Open để mở ra xem ngay, hoặc bấm nút Save để lưu vào máy tính, sau đó có thể đem file đi in ra để sử dụng.
+		</p>
+		<p>(Chú ý: Microsoft Excel là một ứng dụng văn phòng của Microsoft (Microsoft Office), máy tính cần phải cài đặt chương trình này khi muốn xem được file trên)
+		</p>
+		<p>Một kiểu kết quả đăng ký học được lấy ra từ phần mềm
+		</p>
+		<p>Đây là file excel Thời khóa biểu được chương trình xuất ra theo kiểu lớp học phần. Ở đây có đầy đủ thông tin mà sinh viên cần biết như Họ tên, Mã sinh viên, Lớp, khóa, ngành, các môn học đăng ký học, số tín chỉ, thời gian học và học phí phải nộp.
+		</p>
+		<p>3.3. Xem quá trình đăng ký học của mình
+		</p>
+		<p>Để có thể kiểm tra được quá trình đăng ký học tập của mình từ khi bắt đầu đăng ký học, sinh viên sử dụng chức năng Đăng ký học &rArr;  Quá trình đăng ký học.
+		</p>
+		<p>Ở đây cần chọn học kỳ và đợt học và bấm vào nútđể xem. Nếu không chọn học kỳ và đợt học, chương trình sẽ liệt kê toàn bộ các môn học mà sinh viên đã đăng ký học. Có các thông tin lưu vết quá trình đăng ký học như Người đăng ký (nếu sinh viên tự đăng ký thì sẽ hiển thị là Sinh viên, Nếu quản trị hệ thống hoặc Cố vấn học tập đăng ký thì sẽ hiển thị tên người đăng ký), thời gian đăng ký (theo giờ của máy chủ).
 		Sinh viên cũng có thể kiểm lại lại dữ liệu đăng ký học mà mình đã hủy bằng cách bấm vào nút
-		Ở đây sẽ hiển thị đầy đủ thông tin lớp học phần đã bị hủy tại học kỳ và đợt học mà sinh viên lựa chọn
-		3.4. Đăng ký nguyện vọng học
-		Nhà trường tổ chức cho sinh viên đăng ký nguyện vọng học trước mỗi đợt học (học kỳ chính, học kỳ phụ) để sinh viên xác nhận nguyện vọng học các môn học với nhà trường. Từ đó, nhà trường có cơ sở để tổ chức kế hoạch phù hợp với nguyện vọng thực tế của sinh viên
-		Lựa chọn menu Đăng ký học => Đăng ký nguyện vọng để sử dụng chức năng đăng ký nguyện vọng học
-		Sinh viên lựa chọn môn học ở ô Chọn và bấm vào nút. Nếu muốn hủy kết quả môn học đã đăng ký nguyện vọng thì lựa chọn môn học ở nút chọn và bấm và nút
-		4. Đăng ký thi lại; tra cứu lịch thi, thi lại
-		4.1. Đăng ký thi lại
-		Sinh viên lựa chọn chức năng đăng ký thi lại để xác thực nguyện vọng thi lại các môn học bị trượt (điểm F, F+), hoặc thi lại nâng điểm (D, D+). Các trường hợp không đủ tư cách dự thi hay phạm quy ở lần thi đầu thì không được thi lại.
-		Để đăng ký thi lại, lựa chọn menu Đăng ký thi => Sinh viên đăng ký thi lại
-		Cách đăng ký thi lại cũng tương tự như cách đăng ký học, sự khác biệt là thay lớp môn học bằng lớp thi.
-		
-		4.2. Kết quả đăng ký thi lại
-		Sinh viên có thể tra cứu kết quả đăng ký thi lại của mình ở nhiều đợt học, học kỳ khác nhau tại chức năng Đăng ký thi => Kết quả đăng ký thi lại
-		Đối với sinh viên hoãn thi ở lần thi đầu thì không phải đăng ký thi lại mà nhà trường sẽ sắp xếp lịch thi và chuyển về tài khoản của sinh viên.
-		4.3. Xem lịch thi cá nhân
-		Lịch thi kết thúc học phần và Lịch thi lại sẽ được nhà trường sắp xếp tự động và trả về tài khoản của sinh viên thông qua chức năng Xem lịch thi cá nhân.
-		Tại đây, sinh viên lựa học kỳ, lần thi (thi lần 1 hay thi lại) và chọn đợt thi mà mình muốn xem, bấm vào nút Danh sách để xem lịch thi. Các thông tin đưa ra cho sinh viên là Môn thi, Ngày thi, Giờ thi – Ca thi, Số báo danh và Phòng thi… Muốn xuất file Excel để in thì lựa chọn chức năng In. Sinh viên đăng ký học cùng khóa nào sẽ xem lịch thi và lịch thi lại tương ứng với đợt thi của khóa đó.
-		5. Tra cứu điểm
+		</p>
+		<p>Ở đây sẽ hiển thị đầy đủ thông tin lớp học phần đã bị hủy tại học kỳ và đợt học mà sinh viên lựa chọn
+		</p>
+		<p>3.4. Đăng ký nguyện vọng học
+		</p>
+		<p>Nhà trường tổ chức cho sinh viên đăng ký nguyện vọng học trước mỗi đợt học (học kỳ chính, học kỳ phụ) để sinh viên xác nhận nguyện vọng học các môn học với nhà trường. Từ đó, nhà trường có cơ sở để tổ chức kế hoạch phù hợp với nguyện vọng thực tế của sinh viên
+		</p>
+		<p>Lựa chọn menu Đăng ký học => Đăng ký nguyện vọng để sử dụng chức năng đăng ký nguyện vọng học
+		</p>
+		<p>Sinh viên lựa chọn môn học ở ô Chọn và bấm vào nút. Nếu muốn hủy kết quả môn học đã đăng ký nguyện vọng thì lựa chọn môn học ở nút chọn và bấm và nút
+		</p>
+		<p>4. Đăng ký thi lại; tra cứu lịch thi, thi lại
+		</p>
+		<p>4.1. Đăng ký thi lại
+		</p>
+		<p>Sinh viên lựa chọn chức năng đăng ký thi lại để xác thực nguyện vọng thi lại các môn học bị trượt (điểm F, F+), hoặc thi lại nâng điểm (D, D+). Các trường hợp không đủ tư cách dự thi hay phạm quy ở lần thi đầu thì không được thi lại.
+		</p>
+		<p>Để đăng ký thi lại, lựa chọn menu Đăng ký thi => Sinh viên đăng ký thi lại
+		</p>
+		<p>Cách đăng ký thi lại cũng tương tự như cách đăng ký học, sự khác biệt là thay lớp môn học bằng lớp thi.
+		</p>
+		<p>4.2. Kết quả đăng ký thi lại
+		</p>
+		<p>Sinh viên có thể tra cứu kết quả đăng ký thi lại của mình ở nhiều đợt học, học kỳ khác nhau tại chức năng Đăng ký thi => Kết quả đăng ký thi lại
+		</p>
+		<p>Đối với sinh viên hoãn thi ở lần thi đầu thì không phải đăng ký thi lại mà nhà trường sẽ sắp xếp lịch thi và chuyển về tài khoản của sinh viên.
+		</p>
+		<p>4.3. Xem lịch thi cá nhân
+		</p>
+		<p>Lịch thi kết thúc học phần và Lịch thi lại sẽ được nhà trường sắp xếp tự động và trả về tài khoản của sinh viên thông qua chức năng Xem lịch thi cá nhân.
+		</p>
+		<p>Tại đây, sinh viên lựa học kỳ, lần thi (thi lần 1 hay thi lại) và chọn đợt thi mà mình muốn xem, bấm vào nút 
+</p>
+		<p>Danh sách để xem lịch thi. Các thông tin đưa ra cho sinh viên là Môn thi, Ngày thi, Giờ thi – Ca thi, Số báo 
+		danh và Phòng thi… Muốn xuất file Excel để in thì lựa chọn chức năng In. Sinh viên đăng ký học cùng khóa nào sẽ xem lịch thi và lịch thi lại tương ứng với đợt thi của khóa đó.
+		</p>
+		<p>5. Tra cứu điểm
 		Sau khi thi học kỳ xong và có điểm, điểm của sinh viên sẽ được Phòng Khảo thí và Kiểm định chất lượng chuyển lên trên tài khoản đăng ký học để có thể tra cứu điểm. Nếu có sai lệch thông tin nào về điểm, sinh viên cần liên hệ với Phòng Khảo thí và Kiểm định chất lượng .
-		5.1. Tra cứu điểm học tập
-		Chức năng này dùng để tra cứu điểm học tập của cá nhân sinh viên theo từng học kỳ, năm học và các tiện ích lọc khác. Thông tin đưa ra gồm có Môn học, Số tín chỉ, Điểm quá trình, điểm thi, Điểm tổng kết học phần, Điểm chữ.
-		Để sinh viên có thể đăng ký thi lại thì ngoài điểm môn học thuộc ngưỡng được thi lại thì điểm môn học của sinh viên phải có đủ 4 đầu điểm: Quá trình, Thi, Tổng kết học phần và điểm chữ. Nếu chưa đủ 4 đầu điểm trên thì sẽ không thể đăng ký thi lại được.
-		5.2. Tra cứu điểm tổng hợp
-		Chức năng này dùng để tra cứu điểm tổng hợp của sinh viên
-		6. Tra cứu điểm rèn luyện, xử lý học vụ, các chứng chỉ và xét tốt nghiệp
-		Chức năng này để sinh viên tra cứu điểm rèn luyện, xử lý học vụ, xét dừng học thôi học, các loại chứng chỉ và Xếp loại tốt nghiệp của sinh viên trong quá trình học tập tại trường
-		7. Tra cứu học phí
-		Chức năng này giúp sinh viên tra cứu tất cả các thông tin liên quan đến tài chính mà sinh viên phải nộp trong quá trình học tập tại trường. Các khoản thu từ học phí, tiền thi lại, miễn giảm… sẽ được hiển thị chi tiết tại chức năng này.
-		8. Chương trình đào tạo
-		Chức năng này giúp sinh viên có thể tra cứu được chương trình học tập của mình tại trường, các môn học bắt buộc, tự chọn và các khối kiến thức mà sinh viên sẽ theo học.
-		Ngoài việc tra cứu chương trình đào tạo ngành của mình, sinh viên có thể tra cứu chương trình đào tạo của các ngành khác.
-		Tại chức năng này, sinh viên cũng có thể Kiểm tra tình trạng hoàn thành chương trình đào tạo của mình .
-		Con số có nghĩa là sinh viên đã tích lũy được 76 tín chỉ trên tổng số 153 tín chỉ theo chương trình học của ngành mình đang theo học.
-		Chức năng này cho phép sinh viên có thể kiểm tra bản thân mình đã tích lũy được số lượng tín chỉ theo từng khối kiến thức, chi tiết các môn đã tích lũy và chưa tích lũy (có điểm kèm theo)
-		Các thông tin như sau:
-		- Khối kiến thức: Tên các khối kiến thức trong chương trình đào tạo
-		- Thuộc tính: Bắt buộc (Bắt buộc phải học), Tự chọn (Chọn một vài môn trong khối để học, đảm bảo đủ số tín chỉ bắt buộc), Không bắt buộc (Không phải học)
-		- Số học phần/Tổng số tín chỉ: Số môn học trong khối/Tổng số tín chỉ tương ứng
-		- Tín chỉ bắt buộc: Số tín chỉ bắt buộc phải học theo từng khối kiến thức
-		- Tín chỉ ĐẠT: Số tín chỉ mà sinh viên đã tích lũy theo từng khối kiến thức
-		Bấm vào các khối kiến thức để xem chi tiết những môn học trong khối kiến thức đã chọn.
-		- Ở cột Điểm những môn công nhận xét tốt nghiệp sẽ hiển thị điểm của sinh viên. Học bao nhiêu lần thì sẽ hiển thị bấy nhiêu điểm (cách nhau bằng dấu “;”)
-		- Ở cột Điểm những môn không công nhận xét tốt nghiệp sẽ hiển thị điểm của các môn không được đưa vào để xét tốt nghiệp (xuất hiện tại khối kiến thức tự chọn khi sinh viên có thể học nhiều hơn số tín chỉ tự chọn quy định của ngành mình). Ví dụ như sinh viên tích lũy 5 môn học (mỗi môn 3 tín chỉ), tổng có 15 tín chỉ nhưng ngành của sinh viên theo học chỉ tối đa là 12 tín chỉ. Như vậy sẽ có 1 môn (3 tín chỉ) không tính vào xét tốt nghiệp, điểm môn học này sẽ hiển thị tại cột nói trên.
-		9. Đổi mật khẩu
-		Sinh viên có thể dùng chức năng Đổi mật khẩu để thay đổi mật khẩu tài khoản đăng ký học của mình
-		10. Chuyên mục Hỏi – đáp
-		Sinh viên có thể theo dõi những câu hỏi thường gặp tại chuyên mục Hỏi đáp của website Đăng ký học
-		11. Thoát khỏi phần mềm đăng ký học
-		Sau khi kết thúc phiên làm việc, sinh viên phải thoát khỏi phần mềm đăng ký học để đảm bảo tính bảo mật cho tài khoản của mình. Đây là công đoạn cuối cùng và rất quan trọng trong quá trình sử dụng phần mềm đăng ký học. Đã có nhiều trường hợp sinh viên bị mất dữ liệu đăng ký học vì không thực hiện bước này (người khác vào hủy kết quả đăng ký học mà sinh viên đã đăng ký…) gây ra những hậu quả nghiêm trọng. Để thoát khỏi chương trình, sinh viên có thể bấm vào nút hoặc bấm vào nút Close của trình duyệt.
-		II. Các lưu ý quan trọng
-		- Website Cổng thông tin đào tạo (  – cung cấp thông tin chi tiết về đào tạo, tuyển sinh, các thông báo mới nhất) và website Đăng ký học (  – phục vụ đăng ký học) là những website có đầy đủ các thông tin cần thiết cho các bạn sinh viên trong quá trình học tập tại trường. Các website trên và email cá nhân (sẽ được nhà trường cung cấp) của sinh viên là những kênh thông tin hết sức quan trọng mà các bạn sinh viên cần phải quan tâm. Nhà trường khuyến cáo các bạn truy cập vào 2 kênh thông tin trên ít nhất 1 ngày 1 lần để có thể cập nhật được thông tin mới nhất và đảm bảo được quyền lợi của mình. Đặc biệt là vào những thời gian tổ chức đăng ký học, đăng ký nguyện vọng hay đăng ký thi lại.
-		- Sinh viên cần đảm báo việc bảo mật thông tin tài khoản cá nhân của mình, tuyệt đối không nhờ người khác đăng ký học hộ. Đã xảy ra nhiều trường hợp do bất cẩn nên bị mất kết quả đăng ký học, dẫn đến hậu quả nghiêm trọng. Nhà trường sẽ không giải quyết những trường hợp sinh viên lộ mật khẩu hay nhờ bạn đăng ký hộ… rồi làm mất kết quả đăng ký học.
-		- Sinh viên hoàn toàn phải tự chịu trách nhiệm với những sự lựa chọn đăng ký của mình.
-		- Cố vấn học tập là người theo sát cả quá trình học tập của sinh viên trong trường, khi có bất cứ thắc mắc gì về chương trình học, mật khẩu hay việc đăng ký, hãy liên hệ ngay với Cố vấn học tập.
-		- Sinh viên được hủy kết quả học kỳ chính ở 2 tuần đầu học kỳ  tại tài khoản đăng ký học, và khi đã hủy thì sẽ không được đăng ký lại.
-		- Học kỳ phụ không được hủy kết quả đăng ký học.
-		- Sinh viên cần phải hoàn thành học phí, lệ phí cho nhà trường theo thời hạn của phòng Công tác chính trị và Quản lý sinh viên thông báo. Nếu quá hạn không nộp, sinh viên sẽ phải chịu hoàn toàn trách nhiệm.
-		- Sau khi sinh viên đăng ký học xong, phòng Đào tạo ĐH&SĐH sẽ cân đối lại và hủy, ghép các lớp học phần có ít sinh viên đăng ký. Sau đó sẽ có thông báo cho sinh viên, sinh viên những lớp học phần bị hủy có thể đăng ký lại môn học đó tại phòng Đào tạo ĐH&SĐH theo thời gian sẽ thông báo.
-		- Sinh viên trước mỗi đợt đăng ký học cần theo dõi sát sao các thông tin mà phòng Đào tạo ĐH&SĐH đưa ra qua email sinh viên. Sẽ có thời khóa biểu dự kiến, các hướng dẫn đăng ký mà các bạn sinh viên cần phải tuân theo nếu muốn có kết quả đăng ký học hợp lý.
-		- Sinh viên cần theo dõi chuyên mục Hỏi đáp tại website Đăng ký học để tránh lặp đi lặp lại các câu hỏi trùng lặp tới các đơn vị quản lý.
-	- Tài khoản email của mỗi sinh viên được nhà trường cấp cho là duy nhất trong quá trình học tập tại trường với mục đích nhận các thông tin mà nhà trường cung cấp. Sinh viên phải có trách nhiệm với tài khoản email của mình và những thư được gửi từ email của mình. Các vấn đề liên quan đến email, sinh viên liên hệ với Trung tâm tin học.</p>
+		</p>
+		<p>5.1. Tra cứu điểm học tập
+		</p>
+		<p>Chức năng này dùng để tra cứu điểm học tập của cá nhân sinh viên theo từng học kỳ, năm học và các tiện ích lọc khác. Thông tin đưa ra gồm có Môn học, Số tín chỉ, Điểm quá trình, điểm thi, Điểm tổng kết học phần, Điểm chữ.
+		</p>
+		<p>Để sinh viên có thể đăng ký thi lại thì ngoài điểm môn học thuộc ngưỡng được thi lại thì điểm môn học của sinh viên phải có đủ 4 đầu điểm: Quá trình, Thi, Tổng kết học phần và điểm chữ. Nếu chưa đủ 4 đầu điểm trên thì sẽ không thể đăng ký thi lại được.
+		</p>
+		<p>5.2. Tra cứu điểm tổng hợp
+		</p>
+		<p>Chức năng này dùng để tra cứu điểm tổng hợp của sinh viên
+		</p>
+		<p>6. Tra cứu điểm rèn luyện, xử lý học vụ, các chứng chỉ và xét tốt nghiệp
+		</p></p>
+		<p>Chức năng này để sinh viên tra cứu điểm rèn luyện, xử lý học vụ, xét dừng học thôi học, các loại chứng chỉ và Xếp loại tốt nghiệp của sinh viên trong quá trình học tập tại trường
+		</p>
+		<p>7. Tra cứu học phí
+		</p>
+		<p>Chức năng này giúp sinh viên tra cứu tất cả các thông tin liên quan đến tài chính mà sinh viên phải nộp trong quá trình học tập tại trường. Các khoản thu từ học phí, tiền thi lại, miễn giảm… sẽ được hiển thị chi tiết tại chức năng này.
+		</p>
+		<p>8. Chương trình đào tạo
+		</p>
+		<p>Chức năng này giúp sinh viên có thể tra cứu được chương trình học tập của mình tại trường, các môn học bắt buộc, tự chọn và các khối kiến thức mà sinh viên sẽ theo học.
+		</p>
+		<p>Ngoài việc tra cứu chương trình đào tạo ngành của mình, sinh viên có thể tra cứu chương trình đào tạo của các ngành khác.
+		</p>
+		<p>Tại chức năng này, sinh viên cũng có thể Kiểm tra tình trạng hoàn thành chương trình đào tạo của mình .
+		</p>
+		<p>Con số có nghĩa là sinh viên đã tích lũy được 76 tín chỉ trên tổng số 153 tín chỉ theo chương trình học của 
+		ngành mình đang theo học.
+		</p>
+		<p>Chức năng này cho phép sinh viên có thể kiểm tra bản thân mình đã tích lũy được số lượng tín chỉ theo từng khối kiến thức, chi tiết các môn đã tích lũy và chưa tích lũy (có điểm kèm theo)
+		</p>
+		<p>Các thông tin như sau:
+		</p>
+		<p>- Khối kiến thức: Tên các khối kiến thức trong chương trình đào tạo
+		</p>
+		<p>- Thuộc tính: Bắt buộc (Bắt buộc phải học), Tự chọn (Chọn một vài môn trong khối để học, đảm bảo đủ số tín chỉ 
+		bắt buộc), Không bắt buộc (Không phải học)
+		</p>
+		<p>- Số học phần/Tổng số tín chỉ: Số môn học trong khối/Tổng số tín chỉ tương ứng
+		</p>
+		<p>- Tín chỉ bắt buộc: Số tín chỉ bắt buộc phải học theo từng khối kiến thức
+		</p>
+		<p>- Tín chỉ ĐẠT: Số tín chỉ mà sinh viên đã tích lũy theo từng khối kiến thức
+		</p>
+		<p>Bấm vào các khối kiến thức để xem chi tiết những môn học trong khối kiến thức đã chọn.
+		</p>
+		<p>- Ở cột Điểm những môn công nhận xét tốt nghiệp sẽ hiển thị điểm của sinh viên. Học bao nhiêu lần thì sẽ hiển 
+		thị bấy nhiêu điểm (cách nhau bằng dấu “;”)
+		</p>
+		<p>- Ở cột Điểm những môn không công nhận xét tốt nghiệp sẽ hiển thị điểm của các môn không được đưa vào để xét tốt 
+		nghiệp (xuất hiện tại khối kiến thức tự chọn khi sinh viên có thể học nhiều hơn số tín chỉ tự chọn quy định của 
+		ngành mình). Ví dụ như sinh viên tích lũy 5 môn học (mỗi môn 3 tín chỉ), tổng có 15 tín chỉ nhưng ngành của sinh 
+		viên theo học chỉ tối đa là 12 tín chỉ. Như vậy sẽ có 1 môn (3 tín chỉ) không tính vào xét tốt nghiệp, điểm môn 
+		học này sẽ hiển thị tại cột nói trên.
+		</p>
+		<p>9. Đổi mật khẩu
+		</p>
+		<p>Sinh viên có thể dùng chức năng Đổi mật khẩu để thay đổi mật khẩu tài khoản đăng ký học của mình
+		</p>
+		<p>10. Chuyên mục Hỏi – đáp
+		</p>
+		<p>Sinh viên có thể theo dõi những câu hỏi thường gặp tại chuyên mục Hỏi đáp của website Đăng ký học
+		</p>
+		<p>11. Thoát khỏi phần mềm đăng ký học
+	</p>	
+		<p>Sau khi kết thúc phiên làm việc, sinh viên phải thoát khỏi phần mềm đăng ký học để đảm bảo tính bảo mật cho tài 
+		khoản của mình. Đây là công đoạn cuối cùng và rất quan trọng trong quá trình sử dụng phần mềm đăng ký học. Đã có 
+</p>
+		<p>nhiều trường hợp sinh viên bị mất dữ liệu đăng ký học vì không thực hiện bước này (người khác vào hủy kết quả 
+		đăng ký học mà sinh viên đã đăng ký…) gây ra những hậu quả nghiêm trọng. Để thoát khỏi chương trình, sinh viên 
+		có thể bấm vào nút hoặc bấm vào nút Close của trình duyệt.
+	</p>	
+		<p><b>II. Các lưu ý quan trọng</b>
+	</p>	
+		<p>- Website Cổng thông tin đào tạo (  – cung cấp thông tin chi tiết về đào tạo, tuyển sinh, các thông báo mới 
+		nhất) và website Đăng ký học (  – phục vụ đăng ký học) là những website có đầy đủ các thông tin cần thiết cho 
+		các bạn sinh viên trong quá trình học tập tại trường. Các website trên và email cá nhân (sẽ được nhà trường cung 
+		cấp) của sinh viên là những kênh thông tin hết sức quan trọng mà các bạn sinh viên cần phải quan tâm. Nhà trường 
+		khuyến cáo các bạn truy cập vào 2 kênh thông tin trên ít nhất 1 ngày 1 lần để có thể cập nhật được thông tin mới 
+		nhất và đảm bảo được quyền lợi của mình. Đặc biệt là vào những thời gian tổ chức đăng ký học, đăng ký nguyện 
+		vọng hay đăng ký thi lại.
+	</p>	
+		<p>- Sinh viên cần đảm báo việc bảo mật thông tin tài khoản cá nhân của mình, tuyệt đối không nhờ người khác đăng 
+		ký học hộ. Đã xảy ra nhiều trường hợp do bất cẩn nên bị mất kết quả đăng ký học, dẫn đến hậu quả nghiêm trọng. 
+		Nhà trường sẽ không giải quyết những trường hợp sinh viên lộ mật khẩu hay nhờ bạn đăng ký hộ… rồi làm mất kết 
+		quả đăng ký học.
+	</p>	
+		<p>- Sinh viên hoàn toàn phải tự chịu trách nhiệm với những sự lựa chọn đăng ký của mình.
+	</p>	
+		<p>- Cố vấn học tập là người theo sát cả quá trình học tập của sinh viên trong trường, khi có bất cứ thắc mắc gì về 
+		chương trình học, mật khẩu hay việc đăng ký, hãy liên hệ ngay với Cố vấn học tập.
+		
+	</p>	<p>- Sinh viên được hủy kết quả học kỳ chính ở 2 tuần đầu học kỳ  tại tài khoản đăng ký học, và khi đã hủy thì sẽ 
+		không được đăng ký lại.
+		
+</p>
+		<p>- Học kỳ phụ không được hủy kết quả đăng ký học.
+	</p>	
+		<p>- Sinh viên cần phải hoàn thành học phí, lệ phí cho nhà trường theo thời hạn của phòng Công tác chính trị và 
+		Quản lý sinh viên thông báo. Nếu quá hạn không nộp, sinh viên sẽ phải chịu hoàn toàn trách nhiệm.
+	</p>	
+		<p>- Sau khi sinh viên đăng ký học xong, phòng Đào tạo ĐH&SĐH sẽ cân đối lại và hủy, ghép các lớp học phần có ít 
+		sinh viên đăng ký. Sau đó sẽ có thông báo cho sinh viên, sinh viên những lớp học phần bị hủy có thể đăng ký lại 
+		môn học đó tại phòng Đào tạo ĐH&SĐH theo thời gian sẽ thông báo.
+	</p>	
+		<p>- Sinh viên trước mỗi đợt đăng ký học cần theo dõi sát sao các thông tin mà phòng Đào tạo ĐH&SĐH đưa ra qua 
+		email sinh viên. Sẽ có thời khóa biểu dự kiến, các hướng dẫn đăng ký mà các bạn sinh viên cần phải tuân theo nếu 
+		muốn có kết quả đăng ký học hợp lý.
+	</p>	
+		<p>- Sinh viên cần theo dõi chuyên mục Hỏi đáp tại website Đăng ký học để tránh lặp đi lặp lại các câu hỏi trùng 
+		lặp tới các đơn vị quản lý.
+	</p>
+	<p>- Tài khoản email của mỗi sinh viên được nhà trường cấp cho là duy nhất trong quá trình học tập tại trường với mục đích nhận các thông tin mà nhà trường cung cấp. Sinh viên phải có trách nhiệm với tài khoản email của mình và những thư được gửi từ email của mình. Các vấn đề liên quan đến email, sinh viên liên hệ với Trung tâm tin học.
+
+</p>
+
 	
+
 </body>
+
 </html>
