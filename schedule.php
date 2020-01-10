@@ -1,4 +1,8 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
+?>
+<?php
 require('admin/Classes/PHPExcel.php');
 require('includes/connection.php');
 	
@@ -6,7 +10,7 @@ require('includes/connection.php');
 		if (isset($_GET['search'])) {
 			$id = $_GET['search'];
 		}
-		$sql = "SELECT * FROM kehoachgiangday WHERE MAGIANGVIEN = '$id'";
+		$sql = "SELECT kehoachgiangday.MAKHGD, giangvien.TEN , lophocphan.TENLOPHOCPHAN , /*kehoachgiangday.NGAY,*/ kehoachgiangday.THU, kehoachgiangday.DIADIEM , kehoachgiangday.THOIGIAN , kehoachgiangday.NOIDUNG, thoigianhoc.GDBATDAU , thoigianhoc.GDKETTHUC FROM kehoachgiangday, giangvien, lophocphan, thoigianhoc WHERE  kehoachgiangday.MALOPHOCPHAN = lophocphan.MALOPHOCPHAN AND thoigianhoc.MATHOIGIAN = lophocphan.MATHOIGIAN AND giangvien.MAGIANGVIEN = lophocphan.MAGIANGVIEN AND giangvien.MAGIANGVIEN = '$id'";
 		$query = mysqli_query($conn,$sql);
 	
 	if(isset($_POST['export']))
@@ -15,14 +19,17 @@ require('includes/connection.php');
 		$objExcel->setActiveSheetIndex(0);
 		$sheet = $objExcel->getActiveSheet()->setTitle('Trang_tính1');
 		$rowCount = 1;
-		$sheet->setCellValue('A'.$rowCount,'Mã KHGDDK');
-		$sheet->setCellValue('B'.$rowCount,'Mã giảng viên');
-		$sheet->setCellValue('C'.$rowCount,'Mã lớp học phần');
-		$sheet->setCellValue('D'.$rowCount,'Ngày');
+		$sheet->setCellValue('A'.$rowCount,'Mã LTTT');
+		$sheet->setCellValue('B'.$rowCount,'Mã KHGDDK');
+		$sheet->setCellValue('C'.$rowCount,'Tên giảng viên');
+		$sheet->setCellValue('D'.$rowCount,'Tên lớp học phần');
+		//$sheet->setCellValue('D'.$rowCount,'Ngày');
 		$sheet->setCellValue('E'.$rowCount,'Thứ');
 		$sheet->setCellValue('F'.$rowCount,'Địa điểm');
 		$sheet->setCellValue('G'.$rowCount,'Thời gian');
 		$sheet->setCellValue('H'.$rowCount,'Nội dung');
+		$sheet->setCellValue('I'.$rowCount,'Thời gian bắt đầu');
+		$sheet->setCellValue('J'.$rowCount,'Thời gian kết thúc');
 		$sheet->getColumnDimension("A")->setAutoSize(true);
 		$sheet->getColumnDimension("B")->setAutoSize(true);
 		$sheet->getColumnDimension("C")->setAutoSize(true);
@@ -31,21 +38,32 @@ require('includes/connection.php');
 		$sheet->getColumnDimension("F")->setAutoSize(true);
 		$sheet->getColumnDimension("G")->setAutoSize(true);
 		$sheet->getColumnDimension("H")->setAutoSize(true);
+		$sheet->getColumnDimension("I")->setAutoSize(true);
+		$sheet->getColumnDimension("J")->setAutoSize(true);
+		//$sheet->getColumnDimension("J")->setAutoSize(true);
 		
-		$sheet->getStyle('A1:H1')->getFill()->setFillType(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('00C0C0C0');
-		$sheet->getStyle('A1:H1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-		$sql = "SELECT * FROM kehoachgiangday WHERE MAGIANGVIEN = '$id'";
+		$sheet->getStyle('A1:J1')->getFill()->setFillType(\PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('00C0C0C0');
+		$sheet->getStyle('A1:J1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		//$sql = "SELECT * FROM kehoachgiangday WHERE MAGIANGVIEN = '$id'";
+
+		$sql = "SELECT lichtrinhthucte.MALTTT, lichtrinhthucte.MAKHGD, giangvien.TEN , lophocphan.TENLOPHOCPHAN, lichtrinhthucte.THU, lichtrinhthucte.DIADIEM , lichtrinhthucte.THOIGIAN ,lichtrinhthucte.NOIDUNG, thoigianhoc.GDBATDAU , thoigianhoc.GDKETTHUC FROM kehoachgiangday, giangvien, lophocphan, lichtrinhthucte, thoigianhoc WHERE kehoachgiangday.MALOPHOCPHAN = lophocphan.MALOPHOCPHAN AND thoigianhoc.MATHOIGIAN = lophocphan.MATHOIGIAN AND giangvien.MAGIANGVIEN = lophocphan.MAGIANGVIEN AND lichtrinhthucte.MAKHGD=kehoachgiangday.MAKHGD AND giangvien.MAGIANGVIEN = '$id'";
+
+
+
 		$result = mysqli_query($conn,$sql);
 		while($row = mysqli_fetch_array($result)){
 		$rowCount++;
-		$sheet->setCellValue('A'.$rowCount,$row['MAKHGD']);
-		$sheet->setCellValue('B'.$rowCount,$row['MAGIANGVIEN']);
-		$sheet->setCellValue('C'.$rowCount,$row['MALOPHOCPHAN']);
-		$sheet->setCellValue('D'.$rowCount,$row['NGAY']);
+		$sheet->setCellValue('A'.$rowCount,$row['MALTTT']);
+		$sheet->setCellValue('B'.$rowCount,$row['MAKHGD']);
+		$sheet->setCellValue('C'.$rowCount,$row['TEN']);
+		$sheet->setCellValue('D'.$rowCount,$row['TENLOPHOCPHAN']);
+		//$sheet->setCellValue('D'.$rowCount,$row['NGAY']);
 		$sheet->setCellValue('E'.$rowCount,$row['THU']);
 		$sheet->setCellValue('F'.$rowCount,$row['DIADIEM']);
 		$sheet->setCellValue('G'.$rowCount,$row['THOIGIAN']);
 		$sheet->setCellValue('H'.$rowCount,$row['NOIDUNG']);
+		$sheet->setCellValue('I'.$rowCount,$row['GDBATDAU']);
+		$sheet->setCellValue('J'.$rowCount,$row['GDKETTHUC']);
 		
 		}
 		
@@ -56,7 +74,7 @@ require('includes/connection.php');
 		)
 		)
 		);
-		$sheet->getStyle('A1:H1')->applyFromArray($styleArray);
+		$sheet->getStyle('A1:J1')->applyFromArray($styleArray);
 		$objWrite = new PHPExcel_Writer_Excel2007($objExcel);
 		$filename = 'export.xlsx';
 		$objWrite->save($filename);
@@ -92,35 +110,42 @@ require('includes/connection.php');
 		</form>
 	</div>
 	<table class="table table-bordered table-striped" style="margin: 60px 0px;">
-		
+		<h5 style="text-align: center;">Lịch trình giảng dạy dự kiến</h5>
 		<thead class="bg-success">
 			<tr>
 				<th scope="col">Mã KHGDDK</th>
-				<th scope="col">Mã giảng viên</th>
-				<th scope="col">Mã lớp học phần</th>
-				<th scope="col">Ngày</th>
+				<th scope="col">Tên giảng viên</th>
+				<th scope="col">Tên lớp học phần</th>
+				<!-- <th scope="col">Ngày</th> -->
 				<th scope="col">Thứ</th>
 				<th scope="col">Địa điểm</th>
 				<th scope="col">Thời gian</th>
 				<th scope="col">Nội dung</th>
+				<th scope="col">Giai đoạn bắt đầu</th>
+				<th scope="col">Giai đoạn kết thúc</th>
 				
 			</tr>
 		</thead>
 		<tbody>
 			<?php
+
+
 			while ( $data = mysqli_fetch_array($query)) {
 			
 			
 			?>
+
 			<tr>
 				<th scope="row"><?php echo $data['MAKHGD']; ?></th>
-				<td><?php echo $data['MAGIANGVIEN']; ?></td>
-				<td><?php echo $data['MALOPHOCPHAN']; ?></td>
-				<td><?php echo $data['NGAY']; ?></td>
+				<td><?php echo $data['TEN']; ?></td>
+				<td><?php echo $data['TENLOPHOCPHAN']; ?></td>
+				<!-- <td><?php //echo $data['NGAY']; ?></td> -->
 				<td><?php echo $data['THU']; ?></td>
 				<td><?php echo $data['DIADIEM']; ?></td>
 				<td><?php echo $data['THOIGIAN']; ?></td>
 				<td><?php echo $data['NOIDUNG']; ?></td>
+				<td><?php echo $data['GDBATDAU']; ?></td>
+				<td><?php echo $data['GDKETTHUC']; ?></td>
 				
 				
 			</tr>
@@ -134,24 +159,30 @@ require('includes/connection.php');
 		if (isset($_GET['search'])) {
 			$id = $_GET['search'];
 		}
-		$sql = "SELECT * FROM lichtrinhthucte WHERE MAGIANGVIEN = '$id'";
+		//$sql = "SELECT * FROM lichtrinhthucte WHERE MAGIANGVIEN = '$id'";
+
+		$sql = "SELECT lichtrinhthucte.MALTTT, lichtrinhthucte.MAKHGD, giangvien.TEN , lophocphan.TENLOPHOCPHAN, lichtrinhthucte.THU, lichtrinhthucte.DIADIEM , lichtrinhthucte.THOIGIAN ,lichtrinhthucte.NOIDUNG, thoigianhoc.GDBATDAU , thoigianhoc.GDKETTHUC FROM kehoachgiangday, giangvien, lophocphan, lichtrinhthucte, thoigianhoc WHERE kehoachgiangday.MALOPHOCPHAN = lophocphan.MALOPHOCPHAN AND thoigianhoc.MATHOIGIAN = lophocphan.MATHOIGIAN AND giangvien.MAGIANGVIEN = lophocphan.MAGIANGVIEN AND lichtrinhthucte.MAKHGD=kehoachgiangday.MAKHGD AND giangvien.MAGIANGVIEN = '$id'";
+
 		$query = mysqli_query($conn,$sql);
 	
 	
 	?>
 	
 	<table class="table table-bordered table-striped" style="margin: 60px 0px;">
+		<h5 style="text-align: center;">Lịch trình giảng dạy thực tế</h5>
 		<thead class="bg-success">
 			<tr>
 				<th scope="col">Mã LTTT</th>
 				<th scope="col">Mã KHGDDK</th>
-				<th scope="col">Mã giảng viên</th>
-				<th scope="col">Mã lớp học phần</th>
-				<th scope="col">Ngày</th>
+				<th scope="col">Tên giảng viên</th>
+				<th scope="col">Tên lớp học phần</th>
+				<!-- <th scope="col">Ngày</th> -->
 				<th scope="col">Thứ</th>
 				<th scope="col">Địa điểm</th>
 				<th scope="col">Thời gian</th>
 				<th scope="col">Nội dung</th>
+				<th scope="col">Giai đoạn bắt đầu</th>
+				<th scope="col">Giai đoạn kết thúc</th>
 				
 			</tr>
 		</thead>
@@ -162,15 +193,17 @@ require('includes/connection.php');
 			
 			?>
 			<tr>
-				<th scope="row"><?php echo $data['MALTT']; ?></th>
+				<th scope="row"><?php echo $data['MALTTT']; ?></th>
 				<th><?php echo $data['MAKHGD']; ?></th>
-				<td><?php echo $data['MAGIANGVIEN']; ?></td>
-				<td><?php echo $data['MALOPHOCPHAN']; ?></td>
-				<td><?php echo $data['NGAY']; ?></td>
+				<td><?php echo $data['TEN']; ?></td>
+				<td><?php echo $data['TENLOPHOCPHAN']; ?></td>
+				<!-- <td><?php //echo $data['NGAY']; ?></td> -->
 				<td><?php echo $data['THU']; ?></td>
 				<td><?php echo $data['DIADIEM']; ?></td>
 				<td><?php echo $data['THOIGIAN']; ?></td>
 				<td><?php echo $data['NOIDUNG']; ?></td>
+				<td><?php echo $data['GDBATDAU']; ?></td>
+				<td><?php echo $data['GDKETTHUC']; ?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

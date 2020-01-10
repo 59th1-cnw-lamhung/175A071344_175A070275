@@ -83,14 +83,14 @@ require_once("includes/connection.php");
 																			$_SESSION['TENTAIKHOAN'] = $data["TENTAIKHOAN"];
 																			
 																			$_SESSION["QUYEN"] = $data["QUYEN"];
-														if($data["QUYEN"]==3)
-														header('Location: lecturers/lecturers.php');
-														else if($data["QUYEN"]==1)
-														header('Location: admin/admin.php');
-														else if($data["QUYEN"]==2)
-														header('Location: manager/manager.php');
-														else
-														header('Location: index.php');
+																			if($data["QUYEN"]==3)
+																			header('Location: lecturers/lecturers.php');
+																			else if($data["QUYEN"]==1)
+																			header('Location: admin/admin.php');
+																			else if($data["QUYEN"]==2)
+																			header('Location: manager/manager.php');
+																			else
+																			header('Location: index.php');
 															// Thực thi hành động sau khi lưu thông tin vào session
 															// ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
 																		//header('Location: admin/admin.php');

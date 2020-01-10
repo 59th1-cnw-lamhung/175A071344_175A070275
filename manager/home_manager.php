@@ -93,7 +93,7 @@
             </div>
 </div>
 <div class="row" style="width: 90%; margin: 0px auto" >
-            <!-- Pending Requests Card Example -->
+           <!--  Pending Requests Card Example
             <div class="col-xl-4 col-md-3 mb-2">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
@@ -102,9 +102,9 @@
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Tổng số lớp môn học</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
                         <?php 
-                          $sql = "SELECT * FROM lopmonhoc";
+                         /* $sql = "SELECT * FROM lopmonhoc";
                           $query = mysqli_query($conn,$sql);
-                          echo mysqli_num_rows($query);
+                          echo mysqli_num_rows($query);*/
                         ?>  
                       </div>
                     </div>
@@ -114,7 +114,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
              <div class="col-xl-4 col-md-3 mb-2">
@@ -154,7 +154,7 @@
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-puzzle-piece fa-2x text-gray-300"></i>
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>

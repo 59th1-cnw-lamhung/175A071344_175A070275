@@ -15,12 +15,12 @@
 		//lấy thông tin từ các form bằng phương thức POST
 		$MALOPHOCPHAN = $_POST["MALOPHOCPHAN"];
 		$TENLOPHOCPHAN = $_POST["TENLOPHOCPHAN"];
-		$MALOPMONHOC = $_POST["MALOPMONHOC"];
+		$MAMONHOC = $_POST["MAMONHOC"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
 		$MATHOIGIAN = $_POST["MATHOIGIAN"];
 	
 		// Viết câu lệnh cập nhật thông tin người dùng
-		$sql = "UPDATE lophocphan SET TENLOPHOCPHAN = '$TENLOPHOCPHAN', MALOPMONHOC = '$MALOPMONHOC', MAGIANGVIEN = '$MAGIANGVIEN', MATHOIGIAN = '$MATHOIGIAN' WHERE MALOPHOCPHAN = '$MALOPHOCPHAN'";
+		$sql = "UPDATE lophocphan SET TENLOPHOCPHAN = '$TENLOPHOCPHAN', MAMONHOC = '$MAMONHOC', MAGIANGVIEN = '$MAGIANGVIEN', MATHOIGIAN = '$MATHOIGIAN' WHERE MALOPHOCPHAN = '$MALOPHOCPHAN'";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		mysqli_query($conn,$sql);
 
@@ -71,18 +71,18 @@
 							
 
 							<div class="form-group">
-								<label>Mã lớp môn học</label>
+								<label>Mã môn học</label>
 								<?php
-								$sql = mysqli_query($conn,"select * from lopmonhoc") or die(myqli_error($conn));
+								$sql = mysqli_query($conn,"select * from monhoc") or die(myqli_error($conn));
 								if (mysqli_num_rows($sql) > 0) {
 								$i=0;
 								?>
-								<select class="form-control" name = "MALOPMONHOC">
-									<option><?php echo $data['MALOPMONHOC']; ?></option>
+								<select class="form-control" name = "MAMONHOC">
+									<option><?php echo $data['MAMONHOC']; ?></option>
 									<?php while($row=mysqli_fetch_assoc($sql)) {
 									$i++; ?>
 
-									<option><?php echo $row['MALOPMONHOC']; ?></option>
+									<option><?php echo $row['MAMONHOC']; ?></option>
 									<?php }}  ?>
 								</select>
 						    </div>

@@ -1,16 +1,23 @@
 <?php require_once("../includes/connection.php");?>
 
 <?php
-	$sql = "SELECT MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG 
+	/*$sql = "SELECT MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG 
 	        FROM kehoachgiangday";
 	$query = mysqli_query($conn,$sql);
+    */
+
+	$sql = "SELECT MALTTT, MAKHGD, MAGIANGVIEN, MALOPHOCPHAN, NGAY, THU, DIADIEM, THOIGIAN, NOIDUNG 
+	        FROM lichtrinhthucte";
+	$query = mysqli_query($conn,$sql);
+
+
 ?>
 
 <?php
 	if (isset($_GET["id_delete"])) {
 		
 
-		$sql = 'DELETE FROM kehoachgiangday WHERE MAKHGD LIKE "' . $_GET["id_delete"] .'"';
+		$sql = 'DELETE FROM lichtrinhthucte WHERE MAKHGD LIKE "' . $_GET["id_delete"] .'"';
 
 		mysqli_query($conn,$sql);
 		
@@ -36,8 +43,8 @@
 			    <tr>
 			      <th scope="col">Mã LTTHTT</th>
 			      <th scope="col">Mã KHGDDK</th>
-			      <th scope="col">Mã giảng viên</th>
-			      <th scope="col">Mã lớp học phần</th>
+			      <th scope="col">Mã GV</th>
+			      <th scope="col">Mã LHP</th>
 			      <th scope="col">Ngày</th>
 			      <th scope="col">Thứ</th>
 			      <th scope="col">Địa điểm</th>
@@ -51,19 +58,21 @@
 			  	<?php 
 		            while ( $data = mysqli_fetch_array($query)) {
 				       $MAKHGD = $data['MAKHGD'];
+				       $MALTTT = $data['MALTTT'];
 			           
 	            ?>
+
 			    <tr>
-			      <td></td>
-			      <th scope="row"><?php echo $data['MAKHGD']; ?></th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			      <td><a href="edit_teachingschedule.php?id=<?php echo $MAKHGD;?>">Sửa</a></td>
+			      <th scope="row"><?php echo $data['MALTTT']; ?></th>
+			      <td><?php echo $data['MAKHGD']; ?></td>
+			      <td><?php echo $data['MAGIANGVIEN']; ?></td>
+			      <td><?php echo $data['MALOPHOCPHAN']; ?></td>
+			      <td><?php echo $data['NGAY']; ?></td>
+			      <td><?php echo $data['THU']; ?></td>
+			      <td><?php echo $data['DIADIEM']; ?></td>
+			      <td><?php echo $data['THOIGIAN']; ?></td>
+			      <td><?php echo $data['NOIDUNG']; ?></td>
+			      <td><a href="edit_teachingschedule1.php?id1=<?php echo $MALTTT;?>">Sửa</a></td>
 			      <td><a href="info_teachingschedule.php?id_delete=<?php echo $MAKHGD;?>">Xóa</a></td>
 
 			    </tr>

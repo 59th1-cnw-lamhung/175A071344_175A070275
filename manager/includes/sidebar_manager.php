@@ -80,7 +80,7 @@
 
   </li>
 
-   <li CLASS="nav-item">
+   <!-- <li CLASS="nav-item">
     <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
       <i class="fas fa-clipboard-list"></i>
       <span>Quản lý lớp môn học</span>
@@ -93,9 +93,9 @@
         
       </div>
     </div>
-
+   
     
-  </li>
+     </li> -->
 
 
    <li CLASS="nav-item">
@@ -118,7 +118,7 @@
 
   <li CLASS="nav-item">
     <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour1" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-puzzle-piece"></i>
+      <i class="fas fa-clipboard-list"></i>
       <span>Quản lý KHGDDK</span>
     </a>
     <div id="collapseFour1" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -136,7 +136,7 @@
 
   <li CLASS="nav-item">
     <a CLASS="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-puzzle-piece"></i>
+      <i class="fas fa-user"></i>
       <span>Quản lý cá nhân</span>
     </a>
     <div id="collapseSix" CLASS="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

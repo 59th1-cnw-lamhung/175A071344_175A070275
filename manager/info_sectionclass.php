@@ -1,7 +1,7 @@
 <?php require_once("../includes/connection.php");?>
 
 <?php
-	$sql = "SELECT MALOPHOCPHAN, MALOPMONHOC, TENLOPHOCPHAN, MALOPMONHOC, MAGIANGVIEN, MATHOIGIAN 
+	$sql = "SELECT MALOPHOCPHAN, TENLOPHOCPHAN, MAMONHOC, MAGIANGVIEN, MATHOIGIAN 
 	        FROM lophocphan";
 	$query = mysqli_query($conn,$sql);
 ?>
@@ -36,7 +36,7 @@
 			    <tr>
 			      <th scope="col">Mã lớp học phần</th>
 			      <th scope="col">Tên lớp học phần</th>
-			      <th scope="col">Mã lớp môn học</th>
+			      <th scope="col">Mã môn học</th>
 			      <th scope="col">Mã giảng viên</th>
 			      <th scope="col">Mã thời gian</th>
 			      <th scope="col">Sửa</th>
@@ -52,7 +52,7 @@
 			    <tr>
 			      <th scope="row"><?php echo $data['MALOPHOCPHAN']; ?></th>
 			      <td><?php echo $data['TENLOPHOCPHAN']; ?></td>
-			      <td><?php echo $data['MALOPMONHOC']; ?></td>
+			      <td><?php echo $data['MAMONHOC']; ?></td>
 			      <td><?php echo $data['MAGIANGVIEN']; ?></td>
 			      <td><?php echo $data['MATHOIGIAN']; ?></td>
 			      <td><a href="edit_sectionclass.php?id=<?php echo $MALOPHOCPHAN;?>">Sửa</a></td>
