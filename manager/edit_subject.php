@@ -16,10 +16,11 @@
 		$MANGANHHOC = $_POST["MANGANHHOC"];
 		$MAMONHOC = $_POST["MAMONHOC"];
 		$TENMONHOC = $_POST["TENMONHOC"];
+		$SOTIN = $_POST["SOTIN"];
 		
 	
 		// Viết câu lệnh cập nhật thông tin người dùng
-		$sql = "UPDATE monhoc SET TENMONHOC = '$TENMONHOC' WHERE MAMONHOC = '$MAMONHOC'";
+		$sql = "UPDATE monhoc SET TENMONHOC = '$TENMONHOC', SOTIN = '$SOTIN' WHERE MAMONHOC = '$MAMONHOC'";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		mysqli_query($conn,$sql);
 
@@ -71,6 +72,18 @@
 								<label>Tên môn học</label>
 								<input type="text" name="TENMONHOC" class="form-control" required value="<?php echo $data['TENMONHOC']; ?>"/>
 							</div>
+
+							<div class="form-group">
+								<label>Số tín chỉ</label>
+								<select name="SOTIN" class="form-control" class="form-group">
+									<option><?php echo $data['SOTIN']; ?></option>
+		                            <option>1 tín</option>
+		                            <option>2 tín</option>
+		                            <option>3 tín</option>
+		                            <option>4 tín</option>
+		                            
+		                        </select>
+						    </div>
 					    
 
 					    

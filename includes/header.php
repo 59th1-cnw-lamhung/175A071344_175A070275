@@ -22,7 +22,7 @@
 					<li><a href="index.php">Trang chủ |</a></li>
 					<li><a href="login.php">Đăng nhập |</a></li>
 					<li><a href="">Hỏi đáp |</a></li>
-					<li><a href="help.php">Trợ giúp</a></li>
+					<li><a href="help.php" target="_blank">Trợ giúp</a></li>
 					<select>
 						<option value="">VN</option>
 					</select>

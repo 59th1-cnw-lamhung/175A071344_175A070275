@@ -3,7 +3,7 @@
 
 
 <?php
-	$sql = "SELECT MANGANHHOC, MAMONHOC, TENMONHOC 
+	$sql = "SELECT MANGANHHOC, MAMONHOC, TENMONHOC, SOTIN 
 	        FROM monhoc";
 	$query = mysqli_query($conn,$sql);
 ?>
@@ -38,6 +38,7 @@
 			      <th scope="col">Mã ngành học</th>
 			      <th scope="col">Mã môn học</th>
 			      <th scope="col">Tên môn học</th>
+			      <th scope="col">Số tín chỉ</th>
 			      <th scope="col">Sửa</th>
 			      <th scope="col">Xóa</th>
 			    </tr>
@@ -52,6 +53,7 @@
 			      <th scope="row"><?php echo $data['MANGANHHOC']; ?></th>
 			      <td><?php echo $data['MAMONHOC']; ?></td>
 			      <td><?php echo $data['TENMONHOC']; ?></td>
+			      <td><?php echo $data['SOTIN']; ?></td>
 			      <td><a href="edit_subject.php?id=<?php echo $MAMONHOC;?>">Sửa</a></td>
 			      <td><a href="info_subject.php?id_delete=<?php echo $MAMONHOC;?>">Xóa</a></td>
 

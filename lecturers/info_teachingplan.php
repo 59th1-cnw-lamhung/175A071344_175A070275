@@ -42,7 +42,7 @@
 			      <th scope="col">Địa điểm</th>
 			      <th scope="col">Thời gian</th>
 			      <th scope="col">Nội dung</th>
-			      <!-- <th scope="col">Xóa</th>-->
+			      <th scope="col">Thực tế</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -61,7 +61,7 @@
 			      <td><?php echo $data['THOIGIAN']; ?></td>
 			      <td><?php echo $data['NOIDUNG']; ?></td>
 			      
-			      <!--<td><a href="info_teachingplan.php?id_delete=<?php //echo $MAKHGD;?>">Xóa</a></td>-->
+			      <td><a href="edit_teachingschedule.php?id_tt=<?php echo $MAKHGD;?>">Thực tế</a></td>
 
 			    </tr>
 			    <?php } ?>

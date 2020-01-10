@@ -6,7 +6,7 @@ $message = '';
 		//lấy thông tin từ các form bằng phương thức POST
 		$MALOPHOCPHAN = $_POST["MALOPHOCPHAN"];
 		$TENLOPHOCPHAN = $_POST["TENLOPHOCPHAN"];
-		$MALOPMONHOC = $_POST["MALOPMONHOC"];
+		$MAMONHOC = $_POST["MAMONHOC"];
 		$MAGIANGVIEN = $_POST["MAGIANGVIEN"];
 		$MATHOIGIAN = $_POST["MATHOIGIAN"];
 
@@ -22,7 +22,7 @@ $message = '';
         } 
         else
         {
-           $sql = "INSERT INTO lophocphan VALUES ('$MALOPHOCPHAN', '$TENLOPHOCPHAN', '$MALOPMONHOC', '$MAGIANGVIEN', '$MATHOIGIAN')";
+           $sql = "INSERT INTO lophocphan VALUES ('$MALOPHOCPHAN', '$TENLOPHOCPHAN', '$MAMONHOC', '$MAGIANGVIEN', '$MATHOIGIAN')";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		   mysqli_query($conn,$sql);
 
@@ -66,18 +66,18 @@ $message = '';
 
 						
 						<div class="form-group">
-							<label>Mã lớp môn học</label>
+							<label>Mã môn học</label>
 							<?php
-							$sql = mysqli_query($conn,"select * from lopmonhoc") or die(myqli_error($conn));
+							$sql = mysqli_query($conn,"select * from monhoc") or die(myqli_error($conn));
 							if (mysqli_num_rows($sql) > 0) {
 							$i=0;
 							?>
-							<select class="form-control" name = "MALOPMONHOC">
+							<select class="form-control" name = "MAMONHOC">
 								<option></option>
 								<?php while($row=mysqli_fetch_assoc($sql)) {
 								$i++; ?>
 
-								<option><?php echo $row['MALOPMONHOC']; ?></option>
+								<option><?php echo $row['MAMONHOC']; ?></option>
 								<?php }}  ?>
 							</select>
 						</div>

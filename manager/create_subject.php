@@ -6,6 +6,7 @@ $message = '';
 		$MAMONHOC = $_POST["MAMONHOC"];
 		$TENMONHOC = $_POST["TENMONHOC"];
 		$MANGANHHOC = $_POST["MANGANHHOC"];
+		$SOTIN = $_POST["SOTIN"];
 		
 
         $SQL = "SELECT * FROM monhoc WHERE MAMONHOC = '$MAMONHOC'";
@@ -19,7 +20,7 @@ $message = '';
         } 
         else
         {
-            $sql = "INSERT INTO monhoc VALUES ('$MANGANHHOC', '$MAMONHOC', '$TENMONHOC')";
+            $sql = "INSERT INTO monhoc VALUES ('$MANGANHHOC', '$MAMONHOC', '$TENMONHOC', '$SOTIN')";
 		// thực thi câu $sql với biến conn lấy từ file connection.php
 		    mysqli_query($conn,$sql);
 
@@ -78,6 +79,18 @@ $message = '';
 							</select>
 						</div>
 						
+						<div class="form-group">
+								<label>Số tín chỉ</label>
+								<select name="SOTIN" class="form-control" class="form-group">
+									<option></option>
+		                            <option>1 tín</option>
+		                            <option>2 tín</option>
+		                            <option>3 tín</option>
+		                            <option>4 tín</option>
+		                            
+		                        </select>
+						</div>
+
 						<div class="form-group" >
 							<input type="submit" name="create_subject"  value="Tạo môn" class="btn btn-success" />
 						</div>
